@@ -132,6 +132,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#lance.LanceDataset.data_storage_version"><code class="docutils literal notranslate"><span class="pre">LanceDataset.data_storage_version</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.LanceDataset.delete"><code class="docutils literal notranslate"><span class="pre">LanceDataset.delete()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.LanceDataset.delete_config_keys"><code class="docutils literal notranslate"><span class="pre">LanceDataset.delete_config_keys()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.LanceDataset.delta"><code class="docutils literal notranslate"><span class="pre">LanceDataset.delta()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.LanceDataset.describe_indices"><code class="docutils literal notranslate"><span class="pre">LanceDataset.describe_indices()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.LanceDataset.drop"><code class="docutils literal notranslate"><span class="pre">LanceDataset.drop()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.LanceDataset.drop_columns"><code class="docutils literal notranslate"><span class="pre">LanceDataset.drop_columns()</span></code></a></li>
@@ -144,6 +145,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#lance.LanceDataset.head"><code class="docutils literal notranslate"><span class="pre">LanceDataset.head()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.LanceDataset.index_statistics"><code class="docutils literal notranslate"><span class="pre">LanceDataset.index_statistics()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.LanceDataset.insert"><code class="docutils literal notranslate"><span class="pre">LanceDataset.insert()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.LanceDataset.io_stats_incremental"><code class="docutils literal notranslate"><span class="pre">LanceDataset.io_stats_incremental()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.LanceDataset.io_stats_snapshot"><code class="docutils literal notranslate"><span class="pre">LanceDataset.io_stats_snapshot()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.LanceDataset.join"><code class="docutils literal notranslate"><span class="pre">LanceDataset.join()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.LanceDataset.lance_schema"><code class="docutils literal notranslate"><span class="pre">LanceDataset.lance_schema</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.LanceDataset.latest_version"><code class="docutils literal notranslate"><span class="pre">LanceDataset.latest_version</span></code></a></li>
@@ -421,6 +424,12 @@
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.DataStatistics.fields"><code class="docutils literal notranslate"><span class="pre">DataStatistics.fields</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#lance.dataset.DatasetDelta"><code class="docutils literal notranslate"><span class="pre">DatasetDelta</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#lance.dataset.DatasetDelta.get_inserted_rows"><code class="docutils literal notranslate"><span class="pre">DatasetDelta.get_inserted_rows()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.dataset.DatasetDelta.get_updated_rows"><code class="docutils literal notranslate"><span class="pre">DatasetDelta.get_updated_rows()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.dataset.DatasetDelta.list_transactions"><code class="docutils literal notranslate"><span class="pre">DatasetDelta.list_transactions()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#lance.dataset.DatasetOptimizer"><code class="docutils literal notranslate"><span class="pre">DatasetOptimizer</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.DatasetOptimizer.compact_files"><code class="docutils literal notranslate"><span class="pre">DatasetOptimizer.compact_files()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.DatasetOptimizer.disable_auto_cleanup"><code class="docutils literal notranslate"><span class="pre">DatasetOptimizer.disable_auto_cleanup()</span></code></a></li>
@@ -476,6 +485,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.LanceDataset.data_storage_version"><code class="docutils literal notranslate"><span class="pre">LanceDataset.data_storage_version</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.LanceDataset.delete"><code class="docutils literal notranslate"><span class="pre">LanceDataset.delete()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.LanceDataset.delete_config_keys"><code class="docutils literal notranslate"><span class="pre">LanceDataset.delete_config_keys()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.dataset.LanceDataset.delta"><code class="docutils literal notranslate"><span class="pre">LanceDataset.delta()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.LanceDataset.describe_indices"><code class="docutils literal notranslate"><span class="pre">LanceDataset.describe_indices()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.LanceDataset.drop"><code class="docutils literal notranslate"><span class="pre">LanceDataset.drop()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.LanceDataset.drop_columns"><code class="docutils literal notranslate"><span class="pre">LanceDataset.drop_columns()</span></code></a></li>
@@ -488,6 +498,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.LanceDataset.head"><code class="docutils literal notranslate"><span class="pre">LanceDataset.head()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.LanceDataset.index_statistics"><code class="docutils literal notranslate"><span class="pre">LanceDataset.index_statistics()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.LanceDataset.insert"><code class="docutils literal notranslate"><span class="pre">LanceDataset.insert()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.dataset.LanceDataset.io_stats_incremental"><code class="docutils literal notranslate"><span class="pre">LanceDataset.io_stats_incremental()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.dataset.LanceDataset.io_stats_snapshot"><code class="docutils literal notranslate"><span class="pre">LanceDataset.io_stats_snapshot()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.LanceDataset.join"><code class="docutils literal notranslate"><span class="pre">LanceDataset.join()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.LanceDataset.lance_schema"><code class="docutils literal notranslate"><span class="pre">LanceDataset.lance_schema</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.LanceDataset.latest_version"><code class="docutils literal notranslate"><span class="pre">LanceDataset.latest_version</span></code></a></li>
@@ -2039,6 +2051,65 @@ Non-existent keys will be silently ignored.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="lance.LanceDataset.delta">
+<span class="sig-name descname"><span class="pre">delta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">compared_against</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">begin_version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#lance.dataset.DatasetDelta" title="lance.dataset.DatasetDelta"><span class="pre">DatasetDelta</span></a></span></span><a class="headerlink" href="#lance.LanceDataset.delta" title="Link to this definition"></a></dt>
+<dd><p>Compare changes between two versions of this dataset.</p>
+<p>You must specify either <code class="docutils literal notranslate"><span class="pre">compared_against</span></code> (shorthand for comparing the
+current version against a specific older version) or both <code class="docutils literal notranslate"><span class="pre">begin_version</span></code>
+and <code class="docutils literal notranslate"><span class="pre">end_version</span></code> for an explicit range.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>compared_against</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – The version to compare the current dataset version against.
+This is a shorthand for setting <code class="docutils literal notranslate"><span class="pre">begin_version=compared_against</span></code>
+and <code class="docutils literal notranslate"><span class="pre">end_version=self.version</span></code>.</p></li>
+<li><p><strong>begin_version</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – The start version (exclusive) for the comparison range.
+Must be used together with <code class="docutils literal notranslate"><span class="pre">end_version</span></code>.</p></li>
+<li><p><strong>end_version</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – The end version (inclusive) for the comparison range.
+Must be used together with <code class="docutils literal notranslate"><span class="pre">begin_version</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An object that can list transactions or stream inserted/updated rows.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#lance.dataset.DatasetDelta" title="lance.dataset.DatasetDelta">DatasetDelta</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.14)"><strong>ValueError</strong></a> – If both <code class="docutils literal notranslate"><span class="pre">compared_against</span></code> and version range are specified,
+    or if neither is specified.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">lance</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pa</span>
+
+<span class="c1"># Write initial data (v1)</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">lance</span><span class="o">.</span><span class="n">write_dataset</span><span class="p">(</span>
+    <span class="n">pa</span><span class="o">.</span><span class="n">table</span><span class="p">({</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="s2">&quot;val&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">]}),</span>
+    <span class="s2">&quot;memory://delta_demo&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Append some data to create v2</span>
+<span class="n">ds_append</span> <span class="o">=</span> <span class="n">lance</span><span class="o">.</span><span class="n">write_dataset</span><span class="p">(</span>
+    <span class="n">pa</span><span class="o">.</span><span class="n">table</span><span class="p">({</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="s2">&quot;val&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">]}),</span>
+    <span class="s2">&quot;memory://delta_demo&quot;</span><span class="p">,</span>
+    <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;append&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Compute inserted rows from v1 -&gt; v2 (shorthand)</span>
+<span class="n">delta</span> <span class="o">=</span> <span class="n">ds_append</span><span class="o">.</span><span class="n">delta</span><span class="p">(</span><span class="n">compared_against</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">reader</span> <span class="o">=</span> <span class="n">delta</span><span class="o">.</span><span class="n">get_inserted_rows</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span>
+
+<span class="c1"># Or using explicit version range</span>
+<span class="n">delta</span> <span class="o">=</span> <span class="n">ds_append</span><span class="o">.</span><span class="n">delta</span><span class="p">(</span><span class="n">begin_version</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">end_version</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="lance.LanceDataset.describe_indices">
 <span class="sig-name descname"><span class="pre">describe_indices</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">IndexDescription</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#lance.LanceDataset.describe_indices" title="Link to this definition"></a></dt>
 <dd><p>Returns index information for all indices in the dataset.</p>
@@ -2171,6 +2242,97 @@ latest version (raises if uri does not exist)</p>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.LanceDataset.io_stats_incremental">
+<span class="sig-name descname"><span class="pre">io_stats_incremental</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">IOStats</span></span></span><a class="headerlink" href="#lance.LanceDataset.io_stats_incremental" title="Link to this definition"></a></dt>
+<dd><p>Get incremental IO statistics and reset the counters.</p>
+<p>Returns IO statistics (number of operations and bytes) since the last
+time this method was called, then resets the internal counters to zero.
+This is useful for tracking IO operations between different stages of
+processing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Object containing IO statistics with the following attributes:
+- read_iops: Number of read operations
+- read_bytes: Total bytes read
+- write_iops: Number of write operations
+- write_bytes: Total bytes written
+- num_hops: Number of network hops (for remote storage)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>IOStats</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">lance</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pa</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">table</span><span class="p">({</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dataset</span> <span class="o">=</span> <span class="n">lance</span><span class="o">.</span><span class="n">write_dataset</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s2">&quot;memory://test_stats&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Get incremental stats (and reset)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stats</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">io_stats_incremental</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Read </span><span class="si">{</span><span class="n">stats</span><span class="o">.</span><span class="n">read_bytes</span><span class="si">}</span><span class="s2"> bytes in </span><span class="si">{</span><span class="n">stats</span><span class="o">.</span><span class="n">read_iops</span><span class="si">}</span><span class="s2"> operations&quot;</span><span class="p">)</span>
+<span class="go">Read ... bytes in ... operations</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Next call returns only new stats since last call</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">more_data</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stats2</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">io_stats_incremental</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Read </span><span class="si">{</span><span class="n">stats2</span><span class="o">.</span><span class="n">read_bytes</span><span class="si">}</span><span class="s2"> more bytes&quot;</span><span class="p">)</span>
+<span class="go">Read ... more bytes</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#lance.LanceDataset.io_stats_snapshot" title="lance.LanceDataset.io_stats_snapshot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">io_stats_snapshot</span></code></a></dt><dd><p>Get stats without resetting counters</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.LanceDataset.io_stats_snapshot">
+<span class="sig-name descname"><span class="pre">io_stats_snapshot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">IOStats</span></span></span><a class="headerlink" href="#lance.LanceDataset.io_stats_snapshot" title="Link to this definition"></a></dt>
+<dd><p>Get a snapshot of current IO statistics without resetting counters.</p>
+<p>Returns the current IO statistics without modifying the internal state.
+Use this when you need to check stats without resetting them. Multiple
+calls will return the same values until IO operations are performed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Object containing IO statistics with the following attributes:
+- read_iops: Number of read operations
+- read_bytes: Total bytes read
+- write_iops: Number of write operations
+- write_bytes: Total bytes written
+- num_hops: Number of network hops (for remote storage)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>IOStats</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">lance</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pa</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">table</span><span class="p">({</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dataset</span> <span class="o">=</span> <span class="n">lance</span><span class="o">.</span><span class="n">write_dataset</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s2">&quot;memory://test_stats&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Check stats without resetting</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stats</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">io_stats_snapshot</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Read </span><span class="si">{</span><span class="n">stats</span><span class="o">.</span><span class="n">read_bytes</span><span class="si">}</span><span class="s2"> bytes in </span><span class="si">{</span><span class="n">stats</span><span class="o">.</span><span class="n">read_iops</span><span class="si">}</span><span class="s2"> operations&quot;</span><span class="p">)</span>
+<span class="go">Read ... bytes in ... operations</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Can check again and see the same values</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stats2</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">io_stats_snapshot</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="n">stats</span><span class="o">.</span><span class="n">read_bytes</span> <span class="o">==</span> <span class="n">stats2</span><span class="o">.</span><span class="n">read_bytes</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#lance.LanceDataset.io_stats_incremental" title="lance.LanceDataset.io_stats_incremental"><code class="xref py py-obj docutils literal notranslate"><span class="pre">io_stats_incremental</span></code></a></dt><dd><p>Get stats and reset counters for incremental tracking</p>
+</dd>
+</dl>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -3812,7 +3974,7 @@ deployments, as it handles storage options refresh automatically.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>namespace</strong> (<em>LanceNamespace</em>) – The namespace instance to fetch storage options from. Use
-lance_namespace.connect() from the lance_namespace PyPI package.</p></li>
+lance.namespace.connect() to create a namespace instance.</p></li>
 <li><p><strong>table_id</strong> (<em>List</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>]</em>) – The table identifier (e.g., [“workspace”, “table_name”])</p></li>
 </ul>
 </dd>
@@ -3820,10 +3982,10 @@ lance_namespace.connect() from the lance_namespace PyPI package.</p></li>
 <p class="rubric">Example</p>
 <p>This example shows how to use the storage options provider with a namespace.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">lance</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">lance_namespace</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">lance.namespace</span>
 
-<span class="c1"># Connect to a namespace (using the lance_namespace package)</span>
-<span class="n">namespace</span> <span class="o">=</span> <span class="n">lance_namespace</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;http://localhost:4099&quot;</span><span class="p">)</span>
+<span class="c1"># Connect to a namespace</span>
+<span class="n">namespace</span> <span class="o">=</span> <span class="n">lance</span><span class="o">.</span><span class="n">namespace</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;rest&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;http://localhost:4099&quot;</span><span class="p">})</span>
 
 <span class="c1"># Create storage options provider</span>
 <span class="n">provider</span> <span class="o">=</span> <span class="n">lance</span><span class="o">.</span><span class="n">LanceNamespaceStorageOptionsProvider</span><span class="p">(</span>
@@ -5195,7 +5357,7 @@ a default size will be used.</p></li>
 <li><p><strong>session</strong> (<em>optional</em><em>, </em><em>lance.Session</em>) – A session to use for this dataset. This contains the caches used by the
 across multiple datasets.</p></li>
 <li><p><strong>namespace</strong> (<em>optional</em><em>, </em><em>LanceNamespace</em>) – A namespace instance from which to fetch table location and storage options.
-Use lance_namespace.connect() from the lance_namespace package.
+Use lance.namespace.connect() to create a namespace instance.
 Must be provided together with <cite>table_id</cite>. Cannot be used with <cite>uri</cite>.
 When provided, the table location will be fetched automatically from the
 namespace via describe_table().</p></li>
@@ -5507,6 +5669,32 @@ and the position of null values (first or last).</p>
 <dt class="sig sig-object py" id="lance.dataset.DataStatistics.fields">
 <span class="sig-name descname"><span class="pre">fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#lance.dataset.FieldStatistics" title="lance.dataset.FieldStatistics"><span class="pre">FieldStatistics</span></a></em><a class="headerlink" href="#lance.dataset.DataStatistics.fields" title="Link to this definition"></a></dt>
 <dd><p>Statistics about the fields in the dataset</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="lance.dataset.DatasetDelta">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lance.dataset.</span></span><span class="sig-name descname"><span class="pre">DatasetDelta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lance.dataset.DatasetDelta" title="Link to this definition"></a></dt>
+<dd><p>A view of differences between two versions.</p>
+<p>Created by <a class="reference internal" href="#lance.dataset.LanceDataset.delta" title="lance.dataset.LanceDataset.delta"><code class="xref py py-meth docutils literal notranslate"><span class="pre">LanceDataset.delta()</span></code></a>.
+Provides convenient methods to stream inserted/updated rows or list transactions.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.dataset.DatasetDelta.get_inserted_rows">
+<span class="sig-name descname"><span class="pre">get_inserted_rows</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://arrow.apache.org/docs/python/generated/pyarrow.RecordBatchReader.html#pyarrow.RecordBatchReader" title="(in Apache Arrow v22.0.0)"><span class="pre">RecordBatchReader</span></a></span></span><a class="headerlink" href="#lance.dataset.DatasetDelta.get_inserted_rows" title="Link to this definition"></a></dt>
+<dd><p>Return a streaming RecordBatchReader for inserted rows.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.dataset.DatasetDelta.get_updated_rows">
+<span class="sig-name descname"><span class="pre">get_updated_rows</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://arrow.apache.org/docs/python/generated/pyarrow.RecordBatchReader.html#pyarrow.RecordBatchReader" title="(in Apache Arrow v22.0.0)"><span class="pre">RecordBatchReader</span></a></span></span><a class="headerlink" href="#lance.dataset.DatasetDelta.get_updated_rows" title="Link to this definition"></a></dt>
+<dd><p>Return a streaming RecordBatchReader for updated rows.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.dataset.DatasetDelta.list_transactions">
+<span class="sig-name descname"><span class="pre">list_transactions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#lance.dataset.Transaction" title="lance.dataset.Transaction"><span class="pre">Transaction</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#lance.dataset.DatasetDelta.list_transactions" title="Link to this definition"></a></dt>
+<dd><p>List transactions in the range from begin_version + 1 to end_version.</p>
 </dd></dl>
 
 </dd></dl>
@@ -6548,6 +6736,65 @@ Non-existent keys will be silently ignored.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="lance.dataset.LanceDataset.delta">
+<span class="sig-name descname"><span class="pre">delta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">compared_against</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">begin_version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#lance.dataset.DatasetDelta" title="lance.dataset.DatasetDelta"><span class="pre">DatasetDelta</span></a></span></span><a class="headerlink" href="#lance.dataset.LanceDataset.delta" title="Link to this definition"></a></dt>
+<dd><p>Compare changes between two versions of this dataset.</p>
+<p>You must specify either <code class="docutils literal notranslate"><span class="pre">compared_against</span></code> (shorthand for comparing the
+current version against a specific older version) or both <code class="docutils literal notranslate"><span class="pre">begin_version</span></code>
+and <code class="docutils literal notranslate"><span class="pre">end_version</span></code> for an explicit range.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>compared_against</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – The version to compare the current dataset version against.
+This is a shorthand for setting <code class="docutils literal notranslate"><span class="pre">begin_version=compared_against</span></code>
+and <code class="docutils literal notranslate"><span class="pre">end_version=self.version</span></code>.</p></li>
+<li><p><strong>begin_version</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – The start version (exclusive) for the comparison range.
+Must be used together with <code class="docutils literal notranslate"><span class="pre">end_version</span></code>.</p></li>
+<li><p><strong>end_version</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – The end version (inclusive) for the comparison range.
+Must be used together with <code class="docutils literal notranslate"><span class="pre">begin_version</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An object that can list transactions or stream inserted/updated rows.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#lance.dataset.DatasetDelta" title="lance.dataset.DatasetDelta">DatasetDelta</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.14)"><strong>ValueError</strong></a> – If both <code class="docutils literal notranslate"><span class="pre">compared_against</span></code> and version range are specified,
+    or if neither is specified.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">lance</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pa</span>
+
+<span class="c1"># Write initial data (v1)</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">lance</span><span class="o">.</span><span class="n">write_dataset</span><span class="p">(</span>
+    <span class="n">pa</span><span class="o">.</span><span class="n">table</span><span class="p">({</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="s2">&quot;val&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">]}),</span>
+    <span class="s2">&quot;memory://delta_demo&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Append some data to create v2</span>
+<span class="n">ds_append</span> <span class="o">=</span> <span class="n">lance</span><span class="o">.</span><span class="n">write_dataset</span><span class="p">(</span>
+    <span class="n">pa</span><span class="o">.</span><span class="n">table</span><span class="p">({</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="s2">&quot;val&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">]}),</span>
+    <span class="s2">&quot;memory://delta_demo&quot;</span><span class="p">,</span>
+    <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;append&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Compute inserted rows from v1 -&gt; v2 (shorthand)</span>
+<span class="n">delta</span> <span class="o">=</span> <span class="n">ds_append</span><span class="o">.</span><span class="n">delta</span><span class="p">(</span><span class="n">compared_against</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">reader</span> <span class="o">=</span> <span class="n">delta</span><span class="o">.</span><span class="n">get_inserted_rows</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span>
+
+<span class="c1"># Or using explicit version range</span>
+<span class="n">delta</span> <span class="o">=</span> <span class="n">ds_append</span><span class="o">.</span><span class="n">delta</span><span class="p">(</span><span class="n">begin_version</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">end_version</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="lance.dataset.LanceDataset.describe_indices">
 <span class="sig-name descname"><span class="pre">describe_indices</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">IndexDescription</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#lance.dataset.LanceDataset.describe_indices" title="Link to this definition"></a></dt>
 <dd><p>Returns index information for all indices in the dataset.</p>
@@ -6680,6 +6927,97 @@ latest version (raises if uri does not exist)</p>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.dataset.LanceDataset.io_stats_incremental">
+<span class="sig-name descname"><span class="pre">io_stats_incremental</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">IOStats</span></span></span><a class="headerlink" href="#lance.dataset.LanceDataset.io_stats_incremental" title="Link to this definition"></a></dt>
+<dd><p>Get incremental IO statistics and reset the counters.</p>
+<p>Returns IO statistics (number of operations and bytes) since the last
+time this method was called, then resets the internal counters to zero.
+This is useful for tracking IO operations between different stages of
+processing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Object containing IO statistics with the following attributes:
+- read_iops: Number of read operations
+- read_bytes: Total bytes read
+- write_iops: Number of write operations
+- write_bytes: Total bytes written
+- num_hops: Number of network hops (for remote storage)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>IOStats</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">lance</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pa</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">table</span><span class="p">({</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dataset</span> <span class="o">=</span> <span class="n">lance</span><span class="o">.</span><span class="n">write_dataset</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s2">&quot;memory://test_stats&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Get incremental stats (and reset)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stats</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">io_stats_incremental</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Read </span><span class="si">{</span><span class="n">stats</span><span class="o">.</span><span class="n">read_bytes</span><span class="si">}</span><span class="s2"> bytes in </span><span class="si">{</span><span class="n">stats</span><span class="o">.</span><span class="n">read_iops</span><span class="si">}</span><span class="s2"> operations&quot;</span><span class="p">)</span>
+<span class="go">Read ... bytes in ... operations</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Next call returns only new stats since last call</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">more_data</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stats2</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">io_stats_incremental</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Read </span><span class="si">{</span><span class="n">stats2</span><span class="o">.</span><span class="n">read_bytes</span><span class="si">}</span><span class="s2"> more bytes&quot;</span><span class="p">)</span>
+<span class="go">Read ... more bytes</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#lance.dataset.LanceDataset.io_stats_snapshot" title="lance.dataset.LanceDataset.io_stats_snapshot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">io_stats_snapshot</span></code></a></dt><dd><p>Get stats without resetting counters</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.dataset.LanceDataset.io_stats_snapshot">
+<span class="sig-name descname"><span class="pre">io_stats_snapshot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">IOStats</span></span></span><a class="headerlink" href="#lance.dataset.LanceDataset.io_stats_snapshot" title="Link to this definition"></a></dt>
+<dd><p>Get a snapshot of current IO statistics without resetting counters.</p>
+<p>Returns the current IO statistics without modifying the internal state.
+Use this when you need to check stats without resetting them. Multiple
+calls will return the same values until IO operations are performed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Object containing IO statistics with the following attributes:
+- read_iops: Number of read operations
+- read_bytes: Total bytes read
+- write_iops: Number of write operations
+- write_bytes: Total bytes written
+- num_hops: Number of network hops (for remote storage)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>IOStats</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">lance</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pa</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">table</span><span class="p">({</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dataset</span> <span class="o">=</span> <span class="n">lance</span><span class="o">.</span><span class="n">write_dataset</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s2">&quot;memory://test_stats&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Check stats without resetting</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stats</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">io_stats_snapshot</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Read </span><span class="si">{</span><span class="n">stats</span><span class="o">.</span><span class="n">read_bytes</span><span class="si">}</span><span class="s2"> bytes in </span><span class="si">{</span><span class="n">stats</span><span class="o">.</span><span class="n">read_iops</span><span class="si">}</span><span class="s2"> operations&quot;</span><span class="p">)</span>
+<span class="go">Read ... bytes in ... operations</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Can check again and see the same values</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stats2</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">io_stats_snapshot</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="n">stats</span><span class="o">.</span><span class="n">read_bytes</span> <span class="o">==</span> <span class="n">stats2</span><span class="o">.</span><span class="n">read_bytes</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#lance.dataset.LanceDataset.io_stats_incremental" title="lance.dataset.LanceDataset.io_stats_incremental"><code class="xref py py-obj docutils literal notranslate"><span class="pre">io_stats_incremental</span></code></a></dt><dd><p>Get stats and reset counters for incremental tracking</p>
+</dd>
+</dl>
+</div>
 </dd></dl>
 
 <dl class="py method">

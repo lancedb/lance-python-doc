@@ -132,6 +132,7 @@
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.LanceDataset.data_storage_version"><code class="docutils literal notranslate"><span class="pre">LanceDataset.data_storage_version</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.LanceDataset.delete"><code class="docutils literal notranslate"><span class="pre">LanceDataset.delete()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.LanceDataset.delete_config_keys"><code class="docutils literal notranslate"><span class="pre">LanceDataset.delete_config_keys()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.LanceDataset.delta"><code class="docutils literal notranslate"><span class="pre">LanceDataset.delta()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.LanceDataset.describe_indices"><code class="docutils literal notranslate"><span class="pre">LanceDataset.describe_indices()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.LanceDataset.drop"><code class="docutils literal notranslate"><span class="pre">LanceDataset.drop()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.LanceDataset.drop_columns"><code class="docutils literal notranslate"><span class="pre">LanceDataset.drop_columns()</span></code></a></li>
@@ -144,6 +145,8 @@
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.LanceDataset.head"><code class="docutils literal notranslate"><span class="pre">LanceDataset.head()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.LanceDataset.index_statistics"><code class="docutils literal notranslate"><span class="pre">LanceDataset.index_statistics()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.LanceDataset.insert"><code class="docutils literal notranslate"><span class="pre">LanceDataset.insert()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.LanceDataset.io_stats_incremental"><code class="docutils literal notranslate"><span class="pre">LanceDataset.io_stats_incremental()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.LanceDataset.io_stats_snapshot"><code class="docutils literal notranslate"><span class="pre">LanceDataset.io_stats_snapshot()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.LanceDataset.join"><code class="docutils literal notranslate"><span class="pre">LanceDataset.join()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.LanceDataset.lance_schema"><code class="docutils literal notranslate"><span class="pre">LanceDataset.lance_schema</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.LanceDataset.latest_version"><code class="docutils literal notranslate"><span class="pre">LanceDataset.latest_version</span></code></a></li>
@@ -421,6 +424,12 @@
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.DataStatistics.fields"><code class="docutils literal notranslate"><span class="pre">DataStatistics.fields</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="all-modules.html#lance.dataset.DatasetDelta"><code class="docutils literal notranslate"><span class="pre">DatasetDelta</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.DatasetDelta.get_inserted_rows"><code class="docutils literal notranslate"><span class="pre">DatasetDelta.get_inserted_rows()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.DatasetDelta.get_updated_rows"><code class="docutils literal notranslate"><span class="pre">DatasetDelta.get_updated_rows()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.DatasetDelta.list_transactions"><code class="docutils literal notranslate"><span class="pre">DatasetDelta.list_transactions()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="all-modules.html#lance.dataset.DatasetOptimizer"><code class="docutils literal notranslate"><span class="pre">DatasetOptimizer</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.DatasetOptimizer.compact_files"><code class="docutils literal notranslate"><span class="pre">DatasetOptimizer.compact_files()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.DatasetOptimizer.disable_auto_cleanup"><code class="docutils literal notranslate"><span class="pre">DatasetOptimizer.disable_auto_cleanup()</span></code></a></li>
@@ -476,6 +485,7 @@
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.LanceDataset.data_storage_version"><code class="docutils literal notranslate"><span class="pre">LanceDataset.data_storage_version</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.LanceDataset.delete"><code class="docutils literal notranslate"><span class="pre">LanceDataset.delete()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.LanceDataset.delete_config_keys"><code class="docutils literal notranslate"><span class="pre">LanceDataset.delete_config_keys()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.LanceDataset.delta"><code class="docutils literal notranslate"><span class="pre">LanceDataset.delta()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.LanceDataset.describe_indices"><code class="docutils literal notranslate"><span class="pre">LanceDataset.describe_indices()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.LanceDataset.drop"><code class="docutils literal notranslate"><span class="pre">LanceDataset.drop()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.LanceDataset.drop_columns"><code class="docutils literal notranslate"><span class="pre">LanceDataset.drop_columns()</span></code></a></li>
@@ -488,6 +498,8 @@
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.LanceDataset.head"><code class="docutils literal notranslate"><span class="pre">LanceDataset.head()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.LanceDataset.index_statistics"><code class="docutils literal notranslate"><span class="pre">LanceDataset.index_statistics()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.LanceDataset.insert"><code class="docutils literal notranslate"><span class="pre">LanceDataset.insert()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.LanceDataset.io_stats_incremental"><code class="docutils literal notranslate"><span class="pre">LanceDataset.io_stats_incremental()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.LanceDataset.io_stats_snapshot"><code class="docutils literal notranslate"><span class="pre">LanceDataset.io_stats_snapshot()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.LanceDataset.join"><code class="docutils literal notranslate"><span class="pre">LanceDataset.join()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.LanceDataset.lance_schema"><code class="docutils literal notranslate"><span class="pre">LanceDataset.lance_schema</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.LanceDataset.latest_version"><code class="docutils literal notranslate"><span class="pre">LanceDataset.latest_version</span></code></a></li>
@@ -921,6 +933,7 @@ For more detailed quickstart and user guide, please visit the <a class="referenc
 <li class="toctree-l2"><a class="reference internal" href="all-modules.html#lance.dataset.BulkCommitResult"><code class="docutils literal notranslate"><span class="pre">BulkCommitResult</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="all-modules.html#lance.dataset.ColumnOrdering"><code class="docutils literal notranslate"><span class="pre">ColumnOrdering</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="all-modules.html#lance.dataset.DataStatistics"><code class="docutils literal notranslate"><span class="pre">DataStatistics</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="all-modules.html#lance.dataset.DatasetDelta"><code class="docutils literal notranslate"><span class="pre">DatasetDelta</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="all-modules.html#lance.dataset.DatasetOptimizer"><code class="docutils literal notranslate"><span class="pre">DatasetOptimizer</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="all-modules.html#lance.dataset.DatasetStats"><code class="docutils literal notranslate"><span class="pre">DatasetStats</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="all-modules.html#lance.dataset.ExecuteResult"><code class="docutils literal notranslate"><span class="pre">ExecuteResult</span></code></a></li>
