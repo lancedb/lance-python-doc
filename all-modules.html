@@ -4967,16 +4967,16 @@ source is some kind of generator.</p></li>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">builder</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">when_matched_update_all</span><span class="p">()</span><span class="o">.</span><span class="n">when_not_matched_insert_all</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">analysis</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">analyze_plan</span><span class="p">(</span><span class="n">new_data</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">analysis</span><span class="p">)</span>
-<span class="go">    MergeInsert: on=[id], ..., metrics=[..., bytes_written=..., ...], cumulative_cpu=...</span>
-<span class="go">      CoalescePartitionsExec, metrics=[output_rows=..., elapsed_compute=...], cumulative_cpu=...</span>
-<span class="go">        ProjectionExec: expr=[_rowid@1 as _rowid, ...], metrics=[...], cumulative_cpu=...</span>
-<span class="go">          ProjectionExec: expr=[id@2 IS NOT NULL as __common_expr_1, ...], metrics=[...], cumulative_cpu=...</span>
-<span class="go">            CoalesceBatchesExec: ..., metrics=[...], cumulative_cpu=...</span>
-<span class="go">              HashJoinExec: mode=CollectLeft, join_type=Right, ...</span>
-<span class="go">                CooperativeExec, metrics=[], cumulative_cpu=...</span>
-<span class="go">                  LanceRead: ..., metrics=[..., bytes_read=..., ...], cumulative_cpu=...</span>
+<span class="go">    MergeInsert: elapsed=..., on=[id], ..., metrics=[..., bytes_written=..., ...]</span>
+<span class="go">      CoalescePartitionsExec, elapsed=..., metrics=[output_rows=..., elapsed_compute=...]</span>
+<span class="go">        ProjectionExec: elapsed=..., expr=[_rowid@1 as _rowid, ...], metrics=[...]</span>
+<span class="go">          ProjectionExec: elapsed=..., expr=[id@2 IS NOT NULL as __common_expr_1, ...], metrics=[...]</span>
+<span class="go">            CoalesceBatchesExec: elapsed=..., ..., metrics=[...]</span>
+<span class="go">              HashJoinExec: elapsed=..., mode=CollectLeft, join_type=Right, ...</span>
+<span class="go">                CooperativeExec, elapsed=..., metrics=[]</span>
+<span class="go">                  LanceRead: elapsed=..., ..., metrics=[..., bytes_read=..., ...]</span>
 <span class="go">                RepartitionExec: ...</span>
-<span class="go">                  StreamingTableExec: ..., metrics=[], ...</span>
+<span class="go">                  StreamingTableExec: ..., metrics=[]</span>
 </pre></div>
 </div>
 <p>The two key parts of the plan analysis are LanceRead and MergeInsert.
@@ -8954,16 +8954,16 @@ source is some kind of generator.</p></li>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">builder</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">when_matched_update_all</span><span class="p">()</span><span class="o">.</span><span class="n">when_not_matched_insert_all</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">analysis</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">analyze_plan</span><span class="p">(</span><span class="n">new_data</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">analysis</span><span class="p">)</span>
-<span class="go">    MergeInsert: on=[id], ..., metrics=[..., bytes_written=..., ...], cumulative_cpu=...</span>
-<span class="go">      CoalescePartitionsExec, metrics=[output_rows=..., elapsed_compute=...], cumulative_cpu=...</span>
-<span class="go">        ProjectionExec: expr=[_rowid@1 as _rowid, ...], metrics=[...], cumulative_cpu=...</span>
-<span class="go">          ProjectionExec: expr=[id@2 IS NOT NULL as __common_expr_1, ...], metrics=[...], cumulative_cpu=...</span>
-<span class="go">            CoalesceBatchesExec: ..., metrics=[...], cumulative_cpu=...</span>
-<span class="go">              HashJoinExec: mode=CollectLeft, join_type=Right, ...</span>
-<span class="go">                CooperativeExec, metrics=[], cumulative_cpu=...</span>
-<span class="go">                  LanceRead: ..., metrics=[..., bytes_read=..., ...], cumulative_cpu=...</span>
+<span class="go">    MergeInsert: elapsed=..., on=[id], ..., metrics=[..., bytes_written=..., ...]</span>
+<span class="go">      CoalescePartitionsExec, elapsed=..., metrics=[output_rows=..., elapsed_compute=...]</span>
+<span class="go">        ProjectionExec: elapsed=..., expr=[_rowid@1 as _rowid, ...], metrics=[...]</span>
+<span class="go">          ProjectionExec: elapsed=..., expr=[id@2 IS NOT NULL as __common_expr_1, ...], metrics=[...]</span>
+<span class="go">            CoalesceBatchesExec: elapsed=..., ..., metrics=[...]</span>
+<span class="go">              HashJoinExec: elapsed=..., mode=CollectLeft, join_type=Right, ...</span>
+<span class="go">                CooperativeExec, elapsed=..., metrics=[]</span>
+<span class="go">                  LanceRead: elapsed=..., ..., metrics=[..., bytes_read=..., ...]</span>
 <span class="go">                RepartitionExec: ...</span>
-<span class="go">                  StreamingTableExec: ..., metrics=[], ...</span>
+<span class="go">                  StreamingTableExec: ..., metrics=[]</span>
 </pre></div>
 </div>
 <p>The two key parts of the plan analysis are LanceRead and MergeInsert.
