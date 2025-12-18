@@ -47,6 +47,18 @@
 <li class="toctree-l1"><a class="reference internal" href="data-evolution.html">Data Evolution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="index-and-search.html">Indexing and Searching</a></li>
 <li class="toctree-l1"><a class="reference internal" href="all-modules.html">All Modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="all-modules.html#lance.Blob"><code class="docutils literal notranslate"><span class="pre">Blob</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.Blob.data"><code class="docutils literal notranslate"><span class="pre">Blob.data</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.Blob.empty"><code class="docutils literal notranslate"><span class="pre">Blob.empty()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.Blob.from_bytes"><code class="docutils literal notranslate"><span class="pre">Blob.from_bytes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.Blob.from_uri"><code class="docutils literal notranslate"><span class="pre">Blob.from_uri()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.Blob.uri"><code class="docutils literal notranslate"><span class="pre">Blob.uri</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="all-modules.html#lance.BlobArray"><code class="docutils literal notranslate"><span class="pre">BlobArray</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.BlobArray.from_pylist"><code class="docutils literal notranslate"><span class="pre">BlobArray.from_pylist()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="all-modules.html#lance.BlobColumn"><code class="docutils literal notranslate"><span class="pre">BlobColumn</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="all-modules.html#lance.BlobFile"><code class="docutils literal notranslate"><span class="pre">BlobFile</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.BlobFile.close"><code class="docutils literal notranslate"><span class="pre">BlobFile.close()</span></code></a></li>
@@ -375,6 +387,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="all-modules.html#lance.batch_udf"><code class="docutils literal notranslate"><span class="pre">batch_udf()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="all-modules.html#lance.blob_array"><code class="docutils literal notranslate"><span class="pre">blob_array()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="all-modules.html#lance.blob_field"><code class="docutils literal notranslate"><span class="pre">blob_field()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="all-modules.html#lance.bytes_read_counter"><code class="docutils literal notranslate"><span class="pre">bytes_read_counter()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="all-modules.html#lance.dataset"><code class="docutils literal notranslate"><span class="pre">dataset()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="all-modules.html#lance.iops_counter"><code class="docutils literal notranslate"><span class="pre">iops_counter()</span></code></a></li>
@@ -985,12 +999,20 @@
 </li>
       <li><a href="all-modules.html#lance.batch_udf">batch_udf() (in module lance)</a>
 </li>
+      <li><a href="all-modules.html#lance.Blob">Blob (class in lance)</a>
+</li>
+      <li><a href="all-modules.html#lance.blob_array">blob_array() (in module lance)</a>
+</li>
+      <li><a href="all-modules.html#lance.blob_field">blob_field() (in module lance)</a>
+</li>
+      <li><a href="all-modules.html#lance.BlobArray">BlobArray (class in lance)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="all-modules.html#lance.BlobColumn">BlobColumn (class in lance)</a>
 </li>
       <li><a href="all-modules.html#lance.BlobFile">BlobFile (class in lance)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="all-modules.html#lance.dataset.Branch">Branch (class in lance.dataset)</a>
 </li>
       <li><a href="all-modules.html#lance.dataset.Branches">Branches (class in lance.dataset)</a>
@@ -1165,6 +1187,8 @@
 <h2 id="D">D</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="all-modules.html#lance.Blob.data">data (lance.Blob attribute)</a>
+</li>
       <li><a href="all-modules.html#lance.fragment.FragmentMetadata.data_files">data_files() (lance.fragment.FragmentMetadata method)</a>
 
       <ul>
@@ -1301,6 +1325,8 @@
 <h2 id="E">E</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="all-modules.html#lance.Blob.empty">empty() (lance.Blob static method)</a>
+</li>
       <li><a href="all-modules.html#lance.dataset.DatasetOptimizer.enable_auto_cleanup">enable_auto_cleanup() (lance.dataset.DatasetOptimizer method)</a>
 </li>
       <li><a href="all-modules.html#lance.dataset.MergeInsertBuilder.execute">execute() (lance.dataset.MergeInsertBuilder method)</a>
@@ -1443,6 +1469,8 @@
         <li><a href="all-modules.html#lance.LanceScanner.from_batches">(lance.LanceScanner static method)</a>
 </li>
       </ul></li>
+      <li><a href="all-modules.html#lance.Blob.from_bytes">from_bytes() (lance.Blob static method)</a>
+</li>
       <li><a href="all-modules.html#lance.dataset.LanceScanner.from_dataset">from_dataset() (lance.dataset.LanceScanner static method)</a>
 
       <ul>
@@ -1467,6 +1495,10 @@
         <li><a href="all-modules.html#lance.FragmentMetadata.from_json">(lance.FragmentMetadata static method)</a>
 </li>
       </ul></li>
+      <li><a href="all-modules.html#lance.BlobArray.from_pylist">from_pylist() (lance.BlobArray class method)</a>
+</li>
+      <li><a href="all-modules.html#lance.Blob.from_uri">from_uri() (lance.Blob static method)</a>
+</li>
       <li><a href="all-modules.html#lance.dataset.ScannerBuilder.full_text_search">full_text_search() (lance.dataset.ScannerBuilder method)</a>
 </li>
   </ul></td>
@@ -2547,9 +2579,11 @@
         <li><a href="all-modules.html#id34">(lance.LanceOperation.UpdateMap attribute)</a>, <a href="all-modules.html#lance.LanceOperation.UpdateMap.updates">[1]</a>
 </li>
       </ul></li>
-      <li><a href="all-modules.html#lance.dataset.LanceDataset.uri">uri (lance.dataset.LanceDataset property)</a>
+      <li><a href="all-modules.html#lance.Blob.uri">uri (lance.Blob attribute)</a>
 
       <ul>
+        <li><a href="all-modules.html#lance.dataset.LanceDataset.uri">(lance.dataset.LanceDataset property)</a>
+</li>
         <li><a href="all-modules.html#lance.LanceDataset.uri">(lance.LanceDataset property)</a>
 </li>
       </ul></li>

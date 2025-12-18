@@ -49,6 +49,18 @@
 <li class="toctree-l1"><a class="reference internal" href="data-evolution.html">Data Evolution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="index-and-search.html">Indexing and Searching</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">All Modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#lance.Blob"><code class="docutils literal notranslate"><span class="pre">Blob</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#lance.Blob.data"><code class="docutils literal notranslate"><span class="pre">Blob.data</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.Blob.empty"><code class="docutils literal notranslate"><span class="pre">Blob.empty()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.Blob.from_bytes"><code class="docutils literal notranslate"><span class="pre">Blob.from_bytes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.Blob.from_uri"><code class="docutils literal notranslate"><span class="pre">Blob.from_uri()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.Blob.uri"><code class="docutils literal notranslate"><span class="pre">Blob.uri</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#lance.BlobArray"><code class="docutils literal notranslate"><span class="pre">BlobArray</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#lance.BlobArray.from_pylist"><code class="docutils literal notranslate"><span class="pre">BlobArray.from_pylist()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#lance.BlobColumn"><code class="docutils literal notranslate"><span class="pre">BlobColumn</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lance.BlobFile"><code class="docutils literal notranslate"><span class="pre">BlobFile</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#lance.BlobFile.close"><code class="docutils literal notranslate"><span class="pre">BlobFile.close()</span></code></a></li>
@@ -377,6 +389,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#lance.batch_udf"><code class="docutils literal notranslate"><span class="pre">batch_udf()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lance.blob_array"><code class="docutils literal notranslate"><span class="pre">blob_array()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lance.blob_field"><code class="docutils literal notranslate"><span class="pre">blob_field()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lance.bytes_read_counter"><code class="docutils literal notranslate"><span class="pre">bytes_read_counter()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lance.dataset"><code class="docutils literal notranslate"><span class="pre">dataset()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lance.iops_counter"><code class="docutils literal notranslate"><span class="pre">iops_counter()</span></code></a></li>
@@ -890,6 +904,50 @@
              
   <section id="module-lance">
 <span id="all-modules"></span><h1>All Modules<a class="headerlink" href="#module-lance" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="lance.Blob">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lance.</span></span><span class="sig-name descname"><span class="pre">Blob</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.14)"><span class="pre">bytes</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uri</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lance.Blob" title="Link to this definition"></a></dt>
+<dd><p>A logical blob value for writing Lance blob columns.</p>
+<p>A blob can be represented either by inlined bytes or by an external URI.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="lance.Blob.data">
+<span class="sig-name descname"><span class="pre">data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.14)"><span class="pre">bytes</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#lance.Blob.data" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.Blob.empty">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">empty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#lance.Blob" title="lance.blob.Blob"><span class="pre">Blob</span></a></span></span><a class="headerlink" href="#lance.Blob.empty" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.Blob.from_bytes">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.14)"><span class="pre">bytes</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytearray" title="(in Python v3.14)"><span class="pre">bytearray</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#memoryview" title="(in Python v3.14)"><span class="pre">memoryview</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#lance.Blob" title="lance.blob.Blob"><span class="pre">Blob</span></a></span></span><a class="headerlink" href="#lance.Blob.from_bytes" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.Blob.from_uri">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_uri</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uri</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#lance.Blob" title="lance.blob.Blob"><span class="pre">Blob</span></a></span></span><a class="headerlink" href="#lance.Blob.from_uri" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="lance.Blob.uri">
+<span class="sig-name descname"><span class="pre">uri</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#lance.Blob.uri" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="lance.BlobArray">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lance.</span></span><span class="sig-name descname"><span class="pre">BlobArray</span></span><a class="headerlink" href="#lance.BlobArray" title="Link to this definition"></a></dt>
+<dd><p>A PyArrow extension array for Lance blob columns.</p>
+<p>Construct with <a class="reference internal" href="#lance.BlobArray.from_pylist" title="lance.BlobArray.from_pylist"><code class="xref py py-meth docutils literal notranslate"><span class="pre">from_pylist()</span></code></a> or use <a class="reference internal" href="#lance.blob_array" title="lance.blob_array"><code class="xref py py-func docutils literal notranslate"><span class="pre">blob_array()</span></code></a>.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.BlobArray.from_pylist">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_pylist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#lance.BlobArray" title="lance.blob.BlobArray"><span class="pre">BlobArray</span></a></span></span><a class="headerlink" href="#lance.BlobArray.from_pylist" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 <dl class="py class">
 <dt class="sig sig-object py" id="lance.BlobColumn">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lance.</span></span><span class="sig-name descname"><span class="pre">BlobColumn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">blob_column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://arrow.apache.org/docs/python/generated/pyarrow.Array.html#pyarrow.Array" title="(in Apache Arrow v22.0.0)"><span class="pre">Array</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://arrow.apache.org/docs/python/generated/pyarrow.ChunkedArray.html#pyarrow.ChunkedArray" title="(in Apache Arrow v22.0.0)"><span class="pre">ChunkedArray</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lance.BlobColumn" title="Link to this definition"></a></dt>
@@ -5301,6 +5359,23 @@ results on disk, which can be multiple gigabytes of data.</p></li>
 <dd class="field-even"><p>AddColumnsUDF</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="lance.blob_array">
+<span class="sig-prename descclassname"><span class="pre">lance.</span></span><span class="sig-name descname"><span class="pre">blob_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#lance.BlobArray" title="lance.blob.BlobArray"><span class="pre">BlobArray</span></a></span></span><a class="headerlink" href="#lance.blob_array" title="Link to this definition"></a></dt>
+<dd><p>Construct a blob array from Python values.</p>
+<p>Each value must be one of:
+- bytes-like: inline bytes
+- str: an external URI
+- Blob: explicit inline/uri/empty
+- None: null</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="lance.blob_field">
+<span class="sig-prename descclassname"><span class="pre">lance.</span></span><span class="sig-name descname"><span class="pre">blob_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">nullable</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://arrow.apache.org/docs/python/generated/pyarrow.Field.html#pyarrow.Field" title="(in Apache Arrow v22.0.0)"><span class="pre">Field</span></a></span></span><a class="headerlink" href="#lance.blob_field" title="Link to this definition"></a></dt>
+<dd><p>Construct an Arrow field for a Lance blob column.</p>
 </dd></dl>
 
 <dl class="py function">
