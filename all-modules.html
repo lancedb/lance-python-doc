@@ -364,6 +364,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#lance.MergeInsertBuilder.explain_plan"><code class="docutils literal notranslate"><span class="pre">MergeInsertBuilder.explain_plan()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.MergeInsertBuilder.retry_timeout"><code class="docutils literal notranslate"><span class="pre">MergeInsertBuilder.retry_timeout()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.MergeInsertBuilder.use_index"><code class="docutils literal notranslate"><span class="pre">MergeInsertBuilder.use_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.MergeInsertBuilder.when_matched_delete"><code class="docutils literal notranslate"><span class="pre">MergeInsertBuilder.when_matched_delete()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.MergeInsertBuilder.when_matched_fail"><code class="docutils literal notranslate"><span class="pre">MergeInsertBuilder.when_matched_fail()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.MergeInsertBuilder.when_matched_update_all"><code class="docutils literal notranslate"><span class="pre">MergeInsertBuilder.when_matched_update_all()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.MergeInsertBuilder.when_not_matched_by_source_delete"><code class="docutils literal notranslate"><span class="pre">MergeInsertBuilder.when_not_matched_by_source_delete()</span></code></a></li>
@@ -694,6 +695,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.MergeInsertBuilder.explain_plan"><code class="docutils literal notranslate"><span class="pre">MergeInsertBuilder.explain_plan()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.MergeInsertBuilder.retry_timeout"><code class="docutils literal notranslate"><span class="pre">MergeInsertBuilder.retry_timeout()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.MergeInsertBuilder.use_index"><code class="docutils literal notranslate"><span class="pre">MergeInsertBuilder.use_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.dataset.MergeInsertBuilder.when_matched_delete"><code class="docutils literal notranslate"><span class="pre">MergeInsertBuilder.when_matched_delete()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.MergeInsertBuilder.when_matched_fail"><code class="docutils literal notranslate"><span class="pre">MergeInsertBuilder.when_matched_fail()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.MergeInsertBuilder.when_matched_update_all"><code class="docutils literal notranslate"><span class="pre">MergeInsertBuilder.when_matched_update_all()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.MergeInsertBuilder.when_not_matched_by_source_delete"><code class="docutils literal notranslate"><span class="pre">MergeInsertBuilder.when_not_matched_by_source_delete()</span></code></a></li>
@@ -5217,6 +5219,15 @@ full table scan.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="lance.MergeInsertBuilder.when_matched_delete">
+<span class="sig-name descname"><span class="pre">when_matched_delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#lance.dataset.MergeInsertBuilder" title="lance.dataset.MergeInsertBuilder"><span class="pre">MergeInsertBuilder</span></a></span></span><a class="headerlink" href="#lance.MergeInsertBuilder.when_matched_delete" title="Link to this definition"></a></dt>
+<dd><p>Configure the operation to delete matched rows in the target table.</p>
+<p>After this method is called, when the merge insert operation executes,
+any rows that match both the source table and the target table will be
+deleted.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="lance.MergeInsertBuilder.when_matched_fail">
 <span class="sig-name descname"><span class="pre">when_matched_fail</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#lance.dataset.MergeInsertBuilder" title="lance.dataset.MergeInsertBuilder"><span class="pre">MergeInsertBuilder</span></a></span></span><a class="headerlink" href="#lance.MergeInsertBuilder.when_matched_fail" title="Link to this definition"></a></dt>
 <dd><p>Configure the operation to fail if any rows match</p>
@@ -9226,6 +9237,15 @@ full table scan.</p>
 <dd class="field-odd"><p><a class="reference internal" href="#lance.dataset.MergeInsertBuilder" title="lance.dataset.MergeInsertBuilder">MergeInsertBuilder</a></p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.dataset.MergeInsertBuilder.when_matched_delete">
+<span class="sig-name descname"><span class="pre">when_matched_delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#lance.dataset.MergeInsertBuilder" title="lance.dataset.MergeInsertBuilder"><span class="pre">MergeInsertBuilder</span></a></span></span><a class="headerlink" href="#lance.dataset.MergeInsertBuilder.when_matched_delete" title="Link to this definition"></a></dt>
+<dd><p>Configure the operation to delete matched rows in the target table.</p>
+<p>After this method is called, when the merge insert operation executes,
+any rows that match both the source table and the target table will be
+deleted.</p>
 </dd></dl>
 
 <dl class="py method">
