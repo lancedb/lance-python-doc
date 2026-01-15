@@ -1,0 +1,9 @@
+{
+    "all-modules": 5.04,
+    "basic-io": 0.116,
+    "data-evolution": 0.02,
+    "dataset": 0.034,
+    "index": 0.002,
+    "index-and-search": 0.13,
+    "random-access": 0.02
+}
