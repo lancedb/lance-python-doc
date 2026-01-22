@@ -2641,11 +2641,11 @@ updated, or will be null if they are inserted.</p>
 <span class="gp">... </span>            <span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">new_table</span><span class="p">)</span>
 <span class="go">{&#39;num_inserted_rows&#39;: 1, &#39;num_updated_rows&#39;: 2, &#39;num_deleted_rows&#39;: 0}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dataset</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
-<span class="go">   a  b     c</span>
-<span class="go">0  1  a     x</span>
-<span class="go">1  2  x     y</span>
-<span class="go">2  3  y     z</span>
-<span class="go">3  4  z  None</span>
+<span class="go">   a  b    c</span>
+<span class="go">0  1  a    x</span>
+<span class="go">1  2  x    y</span>
+<span class="go">2  3  y    z</span>
+<span class="go">3  4  z  NaN</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -7397,11 +7397,11 @@ updated, or will be null if they are inserted.</p>
 <span class="gp">... </span>            <span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">new_table</span><span class="p">)</span>
 <span class="go">{&#39;num_inserted_rows&#39;: 1, &#39;num_updated_rows&#39;: 2, &#39;num_deleted_rows&#39;: 0}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dataset</span><span class="o">.</span><span class="n">to_table</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
-<span class="go">   a  b     c</span>
-<span class="go">0  1  a     x</span>
-<span class="go">1  2  x     y</span>
-<span class="go">2  3  y     z</span>
-<span class="go">3  4  z  None</span>
+<span class="go">   a  b    c</span>
+<span class="go">0  1  a    x</span>
+<span class="go">1  2  x    y</span>
+<span class="go">2  3  y    z</span>
+<span class="go">3  4  z  NaN</span>
 </pre></div>
 </div>
 </dd></dl>
