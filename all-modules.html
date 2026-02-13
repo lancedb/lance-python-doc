@@ -736,6 +736,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.ScannerBuilder.scan_in_order"><code class="docutils literal notranslate"><span class="pre">ScannerBuilder.scan_in_order()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.ScannerBuilder.scan_stats_callback"><code class="docutils literal notranslate"><span class="pre">ScannerBuilder.scan_stats_callback()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.ScannerBuilder.strict_batch_size"><code class="docutils literal notranslate"><span class="pre">ScannerBuilder.strict_batch_size()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.dataset.ScannerBuilder.substrait_aggregate"><code class="docutils literal notranslate"><span class="pre">ScannerBuilder.substrait_aggregate()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.ScannerBuilder.to_scanner"><code class="docutils literal notranslate"><span class="pre">ScannerBuilder.to_scanner()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.ScannerBuilder.use_scalar_index"><code class="docutils literal notranslate"><span class="pre">ScannerBuilder.use_scalar_index()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.ScannerBuilder.use_stats"><code class="docutils literal notranslate"><span class="pre">ScannerBuilder.use_stats()</span></code></a></li>
@@ -9743,6 +9744,23 @@ By default, it is false.
 If this is true then small batches will need to be merged together
 which will require a data copy and incur a (typically very small)
 performance penalty.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.dataset.ScannerBuilder.substrait_aggregate">
+<span class="sig-name descname"><span class="pre">substrait_aggregate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">aggregate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.14)"><span class="pre">bytes</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#lance.dataset.ScannerBuilder" title="lance.dataset.ScannerBuilder"><span class="pre">ScannerBuilder</span></a></span></span><a class="headerlink" href="#lance.dataset.ScannerBuilder.substrait_aggregate" title="Link to this definition"></a></dt>
+<dd><p>Set a Substrait aggregate expression for the scanner.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>aggregate</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.14)"><em>bytes</em></a>) – The serialized Substrait Aggregate plan bytes.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>This builder for method chaining.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#lance.dataset.ScannerBuilder" title="lance.dataset.ScannerBuilder">ScannerBuilder</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
