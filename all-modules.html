@@ -5215,12 +5215,11 @@ source is some kind of generator.</p></li>
 <span class="go">      CoalescePartitionsExec, elapsed=..., metrics=[output_rows=..., elapsed_compute=...]</span>
 <span class="go">        ProjectionExec: elapsed=..., expr=[_rowid@1 as _rowid, ...], metrics=[...]</span>
 <span class="go">          ProjectionExec: elapsed=..., expr=[id@2 IS NOT NULL as __common_expr_1, ...], metrics=[...]</span>
-<span class="go">            CoalesceBatchesExec: elapsed=..., ..., metrics=[...]</span>
-<span class="go">              HashJoinExec: elapsed=..., mode=CollectLeft, join_type=Right, ...</span>
-<span class="go">                CooperativeExec, elapsed=..., metrics=[]</span>
-<span class="go">                  LanceRead: elapsed=..., ..., metrics=[..., bytes_read=..., ...]</span>
-<span class="go">                RepartitionExec: ...</span>
-<span class="go">                  StreamingTableExec: ..., metrics=[]</span>
+<span class="go">            HashJoinExec: elapsed=..., mode=CollectLeft, join_type=Right, ...</span>
+<span class="go">              CooperativeExec, elapsed=..., metrics=[]</span>
+<span class="go">                LanceRead: elapsed=..., ..., metrics=[..., bytes_read=..., ...]</span>
+<span class="go">              RepartitionExec: ...</span>
+<span class="go">                StreamingTableExec: ..., metrics=[]</span>
 </pre></div>
 </div>
 <p>The two key parts of the plan analysis are LanceRead and MergeInsert.
@@ -5333,12 +5332,11 @@ available and their types, which affects the generated execution plan.</p></li>
 <span class="go">  CoalescePartitionsExec</span>
 <span class="go">    ProjectionExec: expr=[_rowid@1 as _rowid, _rowaddr@2 as _rowaddr, ...]</span>
 <span class="go">      ProjectionExec: expr=[id@2 IS NOT NULL as __common_expr_1, ...]</span>
-<span class="go">        CoalesceBatchesExec: target_batch_size=...</span>
-<span class="go">          HashJoinExec: mode=CollectLeft, join_type=Right, ...</span>
-<span class="go">            CooperativeExec</span>
-<span class="go">              LanceRead: uri=test_dataset/data, projection=[id], ...</span>
-<span class="go">            RepartitionExec: ...</span>
-<span class="go">              StreamingTableExec: partition_sizes=1, ...</span>
+<span class="go">        HashJoinExec: mode=CollectLeft, join_type=Right, ...</span>
+<span class="go">          CooperativeExec</span>
+<span class="go">            LanceRead: uri=test_dataset/data, projection=[id], ...</span>
+<span class="go">          RepartitionExec: ...</span>
+<span class="go">            StreamingTableExec: partition_sizes=1, ...</span>
 </pre></div>
 </div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Or with explicit schema</span>
@@ -5353,9 +5351,8 @@ available and their types, which affects the generated execution plan.</p></li>
 <span class="go">  CoalescePartitionsExec</span>
 <span class="go">    ProjectionExec: expr=[_rowid@1 as _rowid, _rowaddr@2 as _rowaddr, ...]</span>
 <span class="go">      ProjectionExec: expr=[id@2 IS NOT NULL as __common_expr_1, ...]</span>
-<span class="go">        CoalesceBatchesExec: target_batch_size=...</span>
-<span class="go">          HashJoinExec: mode=CollectLeft, join_type=Right, ...</span>
-<span class="go">            ...</span>
+<span class="go">        HashJoinExec: mode=CollectLeft, join_type=Right, ...</span>
+<span class="go">          ...</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -9363,12 +9360,11 @@ source is some kind of generator.</p></li>
 <span class="go">      CoalescePartitionsExec, elapsed=..., metrics=[output_rows=..., elapsed_compute=...]</span>
 <span class="go">        ProjectionExec: elapsed=..., expr=[_rowid@1 as _rowid, ...], metrics=[...]</span>
 <span class="go">          ProjectionExec: elapsed=..., expr=[id@2 IS NOT NULL as __common_expr_1, ...], metrics=[...]</span>
-<span class="go">            CoalesceBatchesExec: elapsed=..., ..., metrics=[...]</span>
-<span class="go">              HashJoinExec: elapsed=..., mode=CollectLeft, join_type=Right, ...</span>
-<span class="go">                CooperativeExec, elapsed=..., metrics=[]</span>
-<span class="go">                  LanceRead: elapsed=..., ..., metrics=[..., bytes_read=..., ...]</span>
-<span class="go">                RepartitionExec: ...</span>
-<span class="go">                  StreamingTableExec: ..., metrics=[]</span>
+<span class="go">            HashJoinExec: elapsed=..., mode=CollectLeft, join_type=Right, ...</span>
+<span class="go">              CooperativeExec, elapsed=..., metrics=[]</span>
+<span class="go">                LanceRead: elapsed=..., ..., metrics=[..., bytes_read=..., ...]</span>
+<span class="go">              RepartitionExec: ...</span>
+<span class="go">                StreamingTableExec: ..., metrics=[]</span>
 </pre></div>
 </div>
 <p>The two key parts of the plan analysis are LanceRead and MergeInsert.
@@ -9481,12 +9477,11 @@ available and their types, which affects the generated execution plan.</p></li>
 <span class="go">  CoalescePartitionsExec</span>
 <span class="go">    ProjectionExec: expr=[_rowid@1 as _rowid, _rowaddr@2 as _rowaddr, ...]</span>
 <span class="go">      ProjectionExec: expr=[id@2 IS NOT NULL as __common_expr_1, ...]</span>
-<span class="go">        CoalesceBatchesExec: target_batch_size=...</span>
-<span class="go">          HashJoinExec: mode=CollectLeft, join_type=Right, ...</span>
-<span class="go">            CooperativeExec</span>
-<span class="go">              LanceRead: uri=test_dataset/data, projection=[id], ...</span>
-<span class="go">            RepartitionExec: ...</span>
-<span class="go">              StreamingTableExec: partition_sizes=1, ...</span>
+<span class="go">        HashJoinExec: mode=CollectLeft, join_type=Right, ...</span>
+<span class="go">          CooperativeExec</span>
+<span class="go">            LanceRead: uri=test_dataset/data, projection=[id], ...</span>
+<span class="go">          RepartitionExec: ...</span>
+<span class="go">            StreamingTableExec: partition_sizes=1, ...</span>
 </pre></div>
 </div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Or with explicit schema</span>
@@ -9501,9 +9496,8 @@ available and their types, which affects the generated execution plan.</p></li>
 <span class="go">  CoalescePartitionsExec</span>
 <span class="go">    ProjectionExec: expr=[_rowid@1 as _rowid, _rowaddr@2 as _rowaddr, ...]</span>
 <span class="go">      ProjectionExec: expr=[id@2 IS NOT NULL as __common_expr_1, ...]</span>
-<span class="go">        CoalesceBatchesExec: target_batch_size=...</span>
-<span class="go">          HashJoinExec: mode=CollectLeft, join_type=Right, ...</span>
-<span class="go">            ...</span>
+<span class="go">        HashJoinExec: mode=CollectLeft, join_type=Right, ...</span>
+<span class="go">          ...</span>
 </pre></div>
 </div>
 </dd></dl>
