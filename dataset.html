@@ -974,7 +974,8 @@ a default size will be used.</p></li>
 <li><p><strong>read_params</strong> (<em>optional</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – <p>Dictionary of read parameters. Currently supports:
 - cache_repetition_index (bool): Whether to cache repetition indices for</p>
 <blockquote>
-<div><p>large string/binary columns</p>
+<div><p>large string/binary columns. This is enabled by default. You can disable
+it globally by setting LANCE_READ_CACHE_REPETITION_INDEX=false.</p>
 </div></blockquote>
 <ul>
 <li><p>validate_on_decode (bool): Whether to validate data during decoding</p></li>
