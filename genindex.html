@@ -118,10 +118,16 @@
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.Index.created_at"><code class="docutils literal notranslate"><span class="pre">Index.created_at</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.Index.dataset_version"><code class="docutils literal notranslate"><span class="pre">Index.dataset_version</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.Index.fields"><code class="docutils literal notranslate"><span class="pre">Index.fields</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.Index.files"><code class="docutils literal notranslate"><span class="pre">Index.files</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.Index.fragment_ids"><code class="docutils literal notranslate"><span class="pre">Index.fragment_ids</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.Index.index_version"><code class="docutils literal notranslate"><span class="pre">Index.index_version</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.Index.name"><code class="docutils literal notranslate"><span class="pre">Index.name</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.Index.uuid"><code class="docutils literal notranslate"><span class="pre">Index.uuid</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="all-modules.html#lance.IndexFile"><code class="docutils literal notranslate"><span class="pre">IndexFile</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.IndexFile.path"><code class="docutils literal notranslate"><span class="pre">IndexFile.path</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.IndexFile.size_bytes"><code class="docutils literal notranslate"><span class="pre">IndexFile.size_bytes</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="all-modules.html#lance.LanceDataset"><code class="docutils literal notranslate"><span class="pre">LanceDataset</span></code></a><ul>
@@ -482,10 +488,16 @@
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.Index.created_at"><code class="docutils literal notranslate"><span class="pre">Index.created_at</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.Index.dataset_version"><code class="docutils literal notranslate"><span class="pre">Index.dataset_version</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.Index.fields"><code class="docutils literal notranslate"><span class="pre">Index.fields</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.Index.files"><code class="docutils literal notranslate"><span class="pre">Index.files</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.Index.fragment_ids"><code class="docutils literal notranslate"><span class="pre">Index.fragment_ids</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.Index.index_version"><code class="docutils literal notranslate"><span class="pre">Index.index_version</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.Index.name"><code class="docutils literal notranslate"><span class="pre">Index.name</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.Index.uuid"><code class="docutils literal notranslate"><span class="pre">Index.uuid</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="all-modules.html#lance.dataset.IndexFile"><code class="docutils literal notranslate"><span class="pre">IndexFile</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.IndexFile.path"><code class="docutils literal notranslate"><span class="pre">IndexFile.path</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.IndexFile.size_bytes"><code class="docutils literal notranslate"><span class="pre">IndexFile.size_bytes</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="all-modules.html#lance.dataset.LanceDataset"><code class="docutils literal notranslate"><span class="pre">LanceDataset</span></code></a><ul>
@@ -1436,10 +1448,14 @@
 </li>
       <li><a href="all-modules.html#lance.fragment.DeletionFile.file_type">file_type (lance.fragment.DeletionFile attribute)</a>
 </li>
-      <li><a href="all-modules.html#id75">files (lance.fragment.FragmentMetadata attribute)</a>, <a href="all-modules.html#lance.fragment.FragmentMetadata.files">[1]</a>
+      <li><a href="all-modules.html#lance.dataset.Index.files">files (lance.dataset.Index attribute)</a>
 
       <ul>
+        <li><a href="all-modules.html#id75">(lance.fragment.FragmentMetadata attribute)</a>, <a href="all-modules.html#lance.fragment.FragmentMetadata.files">[1]</a>
+</li>
         <li><a href="all-modules.html#id2">(lance.FragmentMetadata attribute)</a>, <a href="all-modules.html#lance.FragmentMetadata.files">[1]</a>
+</li>
+        <li><a href="all-modules.html#lance.Index.files">(lance.Index attribute)</a>
 </li>
       </ul></li>
       <li><a href="all-modules.html#lance.dataset.ScannerBuilder.filter">filter() (lance.dataset.ScannerBuilder method)</a>
@@ -1638,10 +1654,16 @@
         <li><a href="all-modules.html#lance.Index.index_version">(lance.Index attribute)</a>
 </li>
       </ul></li>
-      <li><a href="all-modules.html#lance.ScanStatistics.indices_loaded">indices_loaded (lance.ScanStatistics attribute)</a>
+      <li><a href="all-modules.html#lance.IndexFile">IndexFile (class in lance)</a>
+
+      <ul>
+        <li><a href="all-modules.html#lance.dataset.IndexFile">(class in lance.dataset)</a>
 </li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="all-modules.html#lance.ScanStatistics.indices_loaded">indices_loaded (lance.ScanStatistics attribute)</a>
+</li>
       <li><a href="all-modules.html#id51">initial_bases (lance.dataset.LanceOperation.Overwrite attribute)</a>, <a href="all-modules.html#lance.dataset.LanceOperation.Overwrite.initial_bases">[1]</a>
 
       <ul>
@@ -2185,15 +2207,21 @@
       <li><a href="all-modules.html#lance.dataset.AlterColumn.path">path (lance.dataset.AlterColumn attribute)</a>
 
       <ul>
+        <li><a href="all-modules.html#lance.dataset.IndexFile.path">(lance.dataset.IndexFile attribute)</a>
+</li>
         <li><a href="all-modules.html#lance.DatasetBasePath.path">(lance.DatasetBasePath attribute)</a>
 </li>
         <li><a href="all-modules.html#lance.fragment.DataFile.path">(lance.fragment.DataFile attribute)</a>
 </li>
         <li><a href="all-modules.html#id72">(lance.fragment.DataFile property)</a>
 </li>
+        <li><a href="all-modules.html#lance.IndexFile.path">(lance.IndexFile attribute)</a>
+</li>
       </ul></li>
       <li><a href="all-modules.html#lance.fragment.DeletionFile.path">path() (lance.fragment.DeletionFile method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="all-modules.html#id78">physical_rows (lance.fragment.FragmentMetadata attribute)</a>, <a href="all-modules.html#lance.fragment.FragmentMetadata.physical_rows">[1]</a>
 
       <ul>
@@ -2204,8 +2232,6 @@
         <li><a href="all-modules.html#lance.LanceFragment.physical_rows">(lance.LanceFragment property)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="all-modules.html#lance.fragment.LanceFragment.physical_schema">physical_schema (lance.fragment.LanceFragment property)</a>
 
       <ul>
@@ -2398,14 +2424,14 @@
         <li><a href="all-modules.html#lance.LanceDataset.schema_metadata">(lance.LanceDataset property)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="all-modules.html#id63">schema_metadata_updates (lance.dataset.LanceOperation.UpdateConfig attribute)</a>, <a href="all-modules.html#lance.dataset.LanceOperation.UpdateConfig.schema_metadata_updates">[1]</a>
 
       <ul>
         <li><a href="all-modules.html#id31">(lance.LanceOperation.UpdateConfig attribute)</a>, <a href="all-modules.html#lance.LanceOperation.UpdateConfig.schema_metadata_updates">[1]</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="all-modules.html#lance.schema_to_json">schema_to_json() (in module lance)</a>
 </li>
       <li><a href="all-modules.html#lance.BlobFile.seek">seek() (lance.BlobFile method)</a>
@@ -2430,6 +2456,12 @@
 </li>
       <li><a href="all-modules.html#lance.BlobFile.size">size() (lance.BlobFile method)</a>
 </li>
+      <li><a href="all-modules.html#lance.dataset.IndexFile.size_bytes">size_bytes (lance.dataset.IndexFile attribute)</a>
+
+      <ul>
+        <li><a href="all-modules.html#lance.IndexFile.size_bytes">(lance.IndexFile attribute)</a>
+</li>
+      </ul></li>
       <li><a href="all-modules.html#lance.dataset.LanceDataset.sql">sql() (lance.dataset.LanceDataset method)</a>
 
       <ul>
