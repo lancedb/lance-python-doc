@@ -137,8 +137,7 @@
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.IndexSegmentBuilder.build"><code class="docutils literal notranslate"><span class="pre">IndexSegmentBuilder.build()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.IndexSegmentBuilder.build_all"><code class="docutils literal notranslate"><span class="pre">IndexSegmentBuilder.build_all()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.IndexSegmentBuilder.plan"><code class="docutils literal notranslate"><span class="pre">IndexSegmentBuilder.plan()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.IndexSegmentBuilder.staging_index_uuid"><code class="docutils literal notranslate"><span class="pre">IndexSegmentBuilder.staging_index_uuid</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.IndexSegmentBuilder.with_partial_indices"><code class="docutils literal notranslate"><span class="pre">IndexSegmentBuilder.with_partial_indices()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.IndexSegmentBuilder.with_segments"><code class="docutils literal notranslate"><span class="pre">IndexSegmentBuilder.with_segments()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.IndexSegmentBuilder.with_target_segment_bytes"><code class="docutils literal notranslate"><span class="pre">IndexSegmentBuilder.with_target_segment_bytes()</span></code></a></li>
 </ul>
 </li>
@@ -1010,11 +1009,11 @@ centroids, PQ codebooks). If False, an empty index structure will be
 created without training, which can be populated later.</p></li>
 <li><p><strong>fragment_ids</strong> (<em>List</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>]</em><em>, </em><em>optional</em>) – If provided, the index will be created only on the specified fragments.
 This enables distributed/fragment-level indexing. When provided, the
-method creates temporary index metadata but does not commit the index
-to the dataset. The index can be committed later using
-merge_index_metadata(index_uuid, “VECTOR”, column=…, index_name=…).</p></li>
-<li><p><strong>index_uuid</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><em>optional</em>) – A UUID to use for fragment-level distributed indexing. Multiple
-fragment-level indices need to share UUID for later merging.
+method creates one segment but does not commit the index
+to the dataset. The returned metadata can be passed to
+<code class="docutils literal notranslate"><span class="pre">create_index_segment_builder().with_segments(...)</span></code>
+and then committed with <code class="docutils literal notranslate"><span class="pre">commit_existing_index_segments(...)</span></code>.</p></li>
+<li><p><strong>index_uuid</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><em>optional</em>) – A UUID to use for the segment written by this call.
 If not provided, a new UUID will be generated.</p></li>
 <li><p><strong>target_partition_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – The target partition size. If set, the number of partitions will be computed
 based on the target partition size.
@@ -1214,13 +1213,13 @@ structure. If False, an empty index will be created that can be
 populated later.</p></li>
 <li><p><strong>fragment_ids</strong> (<em>List</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>]</em><em>, </em><em>optional</em>) – If provided, the index will be created only on the specified fragments.
 This enables distributed/fragment-level indexing. When provided, the
-method returns an IndexMetadata object but does not commit the index
-to the dataset. The index can be committed later using the commit API.
+method returns metadata for one segment but does not commit
+the index to the dataset. The segment can be planned, merged, and
+committed later using the segment builder and commit APIs.
 This parameter is passed via kwargs internally.</p></li>
-<li><p><strong>index_uuid</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><em>optional</em>) – A UUID to use for fragment-level distributed indexing
-multiple fragment-level indices need to share UUID for later merging.
-If not provided, a new UUID will be generated. This parameter is passed via
-kwargs internally.</p></li>
+<li><p><strong>index_uuid</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><em>optional</em>) – A UUID to use for the segment written by this call.
+If not provided, a new UUID will be generated. This parameter is
+passed via kwargs internally.</p></li>
 <li><p><strong>with_position</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em>, </em><em>default False</em>) – This is for the <code class="docutils literal notranslate"><span class="pre">INVERTED</span></code> index. If True, the index will store the
 positions of the words in the document, so that you can conduct phrase
 query. This will significantly increase the index size.
