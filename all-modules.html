@@ -2369,7 +2369,7 @@ Must be used together with <code class="docutils literal notranslate"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="lance.LanceDataset.describe_indices">
 <span class="sig-name descname"><span class="pre">describe_indices</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">IndexDescription</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#lance.LanceDataset.describe_indices" title="Link to this definition"></a></dt>
-<dd><p>Returns index information for all indices in the dataset.</p>
+<dd><p>Returns logical index information aggregated across all segments.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2645,11 +2645,12 @@ this will refresh them.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="lance.LanceDataset.list_indices">
 <span class="sig-name descname"><span class="pre">list_indices</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#lance.dataset.Index" title="lance.dataset.Index"><span class="pre">Index</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#lance.LanceDataset.list_indices" title="Link to this definition"></a></dt>
-<dd><p>Returns index information for all indices in the dataset.</p>
+<dd><p>Returns physical index segment information for all indices in the dataset.</p>
 <p>This method is deprecated as it requires loading the statistics for each index
-which can be a very expensive operation.  Instead use describe_indices() to
-list index information and index_statistics() to get the statistics for
-individual indexes of interest.</p>
+which can be a very expensive operation.  It also exposes physical index
+segments directly.  Instead use describe_indices() for logical index
+descriptions and index_statistics() to get the statistics for individual
+indexes of interest.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -7349,7 +7350,7 @@ Must be used together with <code class="docutils literal notranslate"><span clas
 <dl class="py method">
 <dt class="sig sig-object py" id="lance.dataset.LanceDataset.describe_indices">
 <span class="sig-name descname"><span class="pre">describe_indices</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">IndexDescription</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#lance.dataset.LanceDataset.describe_indices" title="Link to this definition"></a></dt>
-<dd><p>Returns index information for all indices in the dataset.</p>
+<dd><p>Returns logical index information aggregated across all segments.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -7625,11 +7626,12 @@ this will refresh them.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="lance.dataset.LanceDataset.list_indices">
 <span class="sig-name descname"><span class="pre">list_indices</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#lance.dataset.Index" title="lance.dataset.Index"><span class="pre">Index</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#lance.dataset.LanceDataset.list_indices" title="Link to this definition"></a></dt>
-<dd><p>Returns index information for all indices in the dataset.</p>
+<dd><p>Returns physical index segment information for all indices in the dataset.</p>
 <p>This method is deprecated as it requires loading the statistics for each index
-which can be a very expensive operation.  Instead use describe_indices() to
-list index information and index_statistics() to get the statistics for
-individual indexes of interest.</p>
+which can be a very expensive operation.  It also exposes physical index
+segments directly.  Instead use describe_indices() for logical index
+descriptions and index_statistics() to get the statistics for individual
+indexes of interest.</p>
 </dd></dl>
 
 <dl class="py property">
