@@ -130,14 +130,6 @@
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.IndexFile.size_bytes"><code class="docutils literal notranslate"><span class="pre">IndexFile.size_bytes</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="all-modules.html#lance.IndexSegmentBuilder"><code class="docutils literal notranslate"><span class="pre">IndexSegmentBuilder</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.IndexSegmentBuilder.build"><code class="docutils literal notranslate"><span class="pre">IndexSegmentBuilder.build()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.IndexSegmentBuilder.build_all"><code class="docutils literal notranslate"><span class="pre">IndexSegmentBuilder.build_all()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.IndexSegmentBuilder.plan"><code class="docutils literal notranslate"><span class="pre">IndexSegmentBuilder.plan()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.IndexSegmentBuilder.with_segments"><code class="docutils literal notranslate"><span class="pre">IndexSegmentBuilder.with_segments()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.IndexSegmentBuilder.with_target_segment_bytes"><code class="docutils literal notranslate"><span class="pre">IndexSegmentBuilder.with_target_segment_bytes()</span></code></a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="all-modules.html#lance.LanceDataset"><code class="docutils literal notranslate"><span class="pre">LanceDataset</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.LanceDataset.add_bases"><code class="docutils literal notranslate"><span class="pre">LanceDataset.add_bases()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.LanceDataset.add_columns"><code class="docutils literal notranslate"><span class="pre">LanceDataset.add_columns()</span></code></a></li>
@@ -154,7 +146,6 @@
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.LanceDataset.count_rows"><code class="docutils literal notranslate"><span class="pre">LanceDataset.count_rows()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.LanceDataset.create_branch"><code class="docutils literal notranslate"><span class="pre">LanceDataset.create_branch()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.LanceDataset.create_index"><code class="docutils literal notranslate"><span class="pre">LanceDataset.create_index()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.LanceDataset.create_index_segment_builder"><code class="docutils literal notranslate"><span class="pre">LanceDataset.create_index_segment_builder()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.LanceDataset.create_index_uncommitted"><code class="docutils literal notranslate"><span class="pre">LanceDataset.create_index_uncommitted()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.LanceDataset.create_scalar_index"><code class="docutils literal notranslate"><span class="pre">LanceDataset.create_scalar_index()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.LanceDataset.data_storage_version"><code class="docutils literal notranslate"><span class="pre">LanceDataset.data_storage_version</span></code></a></li>
@@ -183,6 +174,7 @@
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.LanceDataset.list_indices"><code class="docutils literal notranslate"><span class="pre">LanceDataset.list_indices()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.LanceDataset.max_field_id"><code class="docutils literal notranslate"><span class="pre">LanceDataset.max_field_id</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.LanceDataset.merge"><code class="docutils literal notranslate"><span class="pre">LanceDataset.merge()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.LanceDataset.merge_existing_index_segments"><code class="docutils literal notranslate"><span class="pre">LanceDataset.merge_existing_index_segments()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.LanceDataset.merge_index_metadata"><code class="docutils literal notranslate"><span class="pre">LanceDataset.merge_index_metadata()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.LanceDataset.merge_insert"><code class="docutils literal notranslate"><span class="pre">LanceDataset.merge_insert()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.LanceDataset.metadata"><code class="docutils literal notranslate"><span class="pre">LanceDataset.metadata</span></code></a></li>
@@ -528,7 +520,6 @@
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.LanceDataset.count_rows"><code class="docutils literal notranslate"><span class="pre">LanceDataset.count_rows()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.LanceDataset.create_branch"><code class="docutils literal notranslate"><span class="pre">LanceDataset.create_branch()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.LanceDataset.create_index"><code class="docutils literal notranslate"><span class="pre">LanceDataset.create_index()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.LanceDataset.create_index_segment_builder"><code class="docutils literal notranslate"><span class="pre">LanceDataset.create_index_segment_builder()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.LanceDataset.create_index_uncommitted"><code class="docutils literal notranslate"><span class="pre">LanceDataset.create_index_uncommitted()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.LanceDataset.create_scalar_index"><code class="docutils literal notranslate"><span class="pre">LanceDataset.create_scalar_index()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.LanceDataset.data_storage_version"><code class="docutils literal notranslate"><span class="pre">LanceDataset.data_storage_version</span></code></a></li>
@@ -557,6 +548,7 @@
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.LanceDataset.list_indices"><code class="docutils literal notranslate"><span class="pre">LanceDataset.list_indices()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.LanceDataset.max_field_id"><code class="docutils literal notranslate"><span class="pre">LanceDataset.max_field_id</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.LanceDataset.merge"><code class="docutils literal notranslate"><span class="pre">LanceDataset.merge()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.LanceDataset.merge_existing_index_segments"><code class="docutils literal notranslate"><span class="pre">LanceDataset.merge_existing_index_segments()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.LanceDataset.merge_index_metadata"><code class="docutils literal notranslate"><span class="pre">LanceDataset.merge_index_metadata()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.LanceDataset.merge_insert"><code class="docutils literal notranslate"><span class="pre">LanceDataset.merge_insert()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.LanceDataset.metadata"><code class="docutils literal notranslate"><span class="pre">LanceDataset.metadata</span></code></a></li>
@@ -1061,10 +1053,10 @@
 </li>
       <li><a href="all-modules.html#lance.BlobColumn">BlobColumn (class in lance)</a>
 </li>
-      <li><a href="all-modules.html#lance.BlobFile">BlobFile (class in lance)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="all-modules.html#lance.BlobFile">BlobFile (class in lance)</a>
+</li>
       <li><a href="all-modules.html#lance.dataset.Branch">Branch (class in lance.dataset)</a>
 </li>
       <li><a href="all-modules.html#lance.dataset.Tag.branch">branch (lance.dataset.Tag attribute)</a>
@@ -1080,12 +1072,6 @@
 </li>
       </ul></li>
       <li><a href="all-modules.html#lance.dataset.SqlQueryBuilder.build">build() (lance.dataset.SqlQueryBuilder method)</a>
-
-      <ul>
-        <li><a href="all-modules.html#lance.IndexSegmentBuilder.build">(lance.IndexSegmentBuilder method)</a>
-</li>
-      </ul></li>
-      <li><a href="all-modules.html#lance.IndexSegmentBuilder.build_all">build_all() (lance.IndexSegmentBuilder method)</a>
 </li>
       <li><a href="all-modules.html#lance.dataset.BulkCommitResult">BulkCommitResult (class in lance.dataset)</a>
 </li>
@@ -1175,14 +1161,14 @@
         <li><a href="all-modules.html#id29">(lance.LanceOperation.UpdateConfig attribute)</a>, <a href="all-modules.html#lance.LanceOperation.UpdateConfig.config_updates">[1]</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="all-modules.html#lance.dataset.MergeInsertBuilder.conflict_retries">conflict_retries() (lance.dataset.MergeInsertBuilder method)</a>
 
       <ul>
         <li><a href="all-modules.html#lance.MergeInsertBuilder.conflict_retries">(lance.MergeInsertBuilder method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="all-modules.html#lance.dataset.LanceDataset.count_rows">count_rows() (lance.dataset.LanceDataset method)</a>
 
       <ul>
@@ -1223,12 +1209,6 @@
 
       <ul>
         <li><a href="all-modules.html#lance.LanceDataset.create_index">(lance.LanceDataset method)</a>
-</li>
-      </ul></li>
-      <li><a href="all-modules.html#lance.dataset.LanceDataset.create_index_segment_builder">create_index_segment_builder() (lance.dataset.LanceDataset method)</a>
-
-      <ul>
-        <li><a href="all-modules.html#lance.LanceDataset.create_index_segment_builder">(lance.LanceDataset method)</a>
 </li>
       </ul></li>
       <li><a href="all-modules.html#lance.dataset.LanceDataset.create_index_uncommitted">create_index_uncommitted() (lance.dataset.LanceDataset method)</a>
@@ -1703,8 +1683,6 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="all-modules.html#lance.IndexSegmentBuilder">IndexSegmentBuilder (class in lance)</a>
-</li>
       <li><a href="all-modules.html#lance.ScanStatistics.indices_loaded">indices_loaded (lance.ScanStatistics attribute)</a>
 </li>
       <li><a href="all-modules.html#id51">initial_bases (lance.dataset.LanceOperation.Overwrite attribute)</a>, <a href="all-modules.html#lance.dataset.LanceOperation.Overwrite.initial_bases">[1]</a>
@@ -2008,6 +1986,12 @@
         <li><a href="all-modules.html#lance.LanceFragment.merge_columns">(lance.LanceFragment method)</a>
 </li>
       </ul></li>
+      <li><a href="all-modules.html#lance.dataset.LanceDataset.merge_existing_index_segments">merge_existing_index_segments() (lance.dataset.LanceDataset method)</a>
+
+      <ul>
+        <li><a href="all-modules.html#lance.LanceDataset.merge_existing_index_segments">(lance.LanceDataset method)</a>
+</li>
+      </ul></li>
       <li><a href="all-modules.html#lance.dataset.LanceDataset.merge_index_metadata">merge_index_metadata() (lance.dataset.LanceDataset method)</a>
 
       <ul>
@@ -2263,6 +2247,8 @@
       </ul></li>
       <li><a href="all-modules.html#lance.fragment.DeletionFile.path">path() (lance.fragment.DeletionFile method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="all-modules.html#id78">physical_rows (lance.fragment.FragmentMetadata attribute)</a>, <a href="all-modules.html#lance.fragment.FragmentMetadata.physical_rows">[1]</a>
 
       <ul>
@@ -2273,16 +2259,12 @@
         <li><a href="all-modules.html#lance.LanceFragment.physical_rows">(lance.LanceFragment property)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="all-modules.html#lance.fragment.LanceFragment.physical_schema">physical_schema (lance.fragment.LanceFragment property)</a>
 
       <ul>
         <li><a href="all-modules.html#lance.LanceFragment.physical_schema">(lance.LanceFragment property)</a>
 </li>
       </ul></li>
-      <li><a href="all-modules.html#lance.IndexSegmentBuilder.plan">plan() (lance.IndexSegmentBuilder method)</a>
-</li>
       <li><a href="all-modules.html#lance.Blob.position">position (lance.Blob attribute)</a>
 </li>
       <li><a href="all-modules.html#id46">predicate (lance.dataset.LanceOperation.Delete attribute)</a>, <a href="all-modules.html#lance.dataset.LanceOperation.Delete.predicate">[1]</a>
@@ -2837,10 +2819,6 @@
         <li><a href="all-modules.html#lance.dataset.SqlQueryBuilder.with_row_id">(lance.dataset.SqlQueryBuilder method)</a>
 </li>
       </ul></li>
-      <li><a href="all-modules.html#lance.IndexSegmentBuilder.with_segments">with_segments() (lance.IndexSegmentBuilder method)</a>
-</li>
-      <li><a href="all-modules.html#lance.IndexSegmentBuilder.with_target_segment_bytes">with_target_segment_bytes() (lance.IndexSegmentBuilder method)</a>
-</li>
       <li><a href="all-modules.html#lance.write_dataset">write_dataset() (in module lance)</a>
 
       <ul>
