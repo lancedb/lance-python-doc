@@ -838,6 +838,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#lance.fragment.DataFile.file_size_bytes"><code class="docutils literal notranslate"><span class="pre">DataFile.file_size_bytes</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.fragment.DataFile.base_id"><code class="docutils literal notranslate"><span class="pre">DataFile.base_id</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id67"><code class="docutils literal notranslate"><span class="pre">DataFile.column_indices</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.fragment.DataFile.create"><code class="docutils literal notranslate"><span class="pre">DataFile.create()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.fragment.DataFile.field_ids"><code class="docutils literal notranslate"><span class="pre">DataFile.field_ids()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id68"><code class="docutils literal notranslate"><span class="pre">DataFile.fields</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id69"><code class="docutils literal notranslate"><span class="pre">DataFile.file_major_version</span></code></a></li>
@@ -10628,6 +10629,28 @@ the same length as <cite>fields</cite>.</p>
 <dt class="sig sig-object py" id="id67">
 <span class="sig-name descname"><span class="pre">column_indices</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#id67" title="Link to this definition"></a></dt>
 <dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.fragment.DataFile.create">
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#lance.LanceDataset" title="lance.LanceDataset"><span class="pre">LanceDataset</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#lance.fragment.DataFile" title="lance.fragment.DataFile"><span class="pre">DataFile</span></a></span></span><a class="headerlink" href="#lance.fragment.DataFile.create" title="Link to this definition"></a></dt>
+<dd><p>Create a DataFile by reading metadata from an existing lance file.</p>
+<p>This is a convenience method for creating DataFile metadata needed
+for operations like DataReplacement. It opens the file, reads its
+schema and version information, matches columns to the dataset’s
+schema to determine field IDs, and calculates column indices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset</strong> (<a class="reference internal" href="#lance.LanceDataset" title="lance.LanceDataset"><em>LanceDataset</em></a>) – The dataset this file will belong to.</p></li>
+<li><p><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – The path to the data file, relative to the dataset’s data directory.</p></li>
+<li><p><strong>base_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – The base path ID if the file is outside the dataset directory.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#lance.fragment.DataFile" title="lance.fragment.DataFile">DataFile</a></p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lance.fragment.DataFile.field_ids">
