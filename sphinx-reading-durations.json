@@ -1,9 +1,9 @@
 {
-    "all-modules": 5.517,
-    "basic-io": 0.334,
-    "data-evolution": 0.02,
-    "dataset": 0.033,
+    "all-modules": 6.293,
+    "basic-io": 0.395,
+    "data-evolution": 0.023,
+    "dataset": 0.035,
     "index": 0.002,
-    "index-and-search": 0.137,
-    "random-access": 0.019
+    "index-and-search": 0.145,
+    "random-access": 0.021
 }
