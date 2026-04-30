@@ -442,6 +442,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.Branch.branch_identifier"><code class="docutils literal notranslate"><span class="pre">Branch.branch_identifier</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.Branch.create_at"><code class="docutils literal notranslate"><span class="pre">Branch.create_at</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.Branch.manifest_size"><code class="docutils literal notranslate"><span class="pre">Branch.manifest_size</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.dataset.Branch.metadata"><code class="docutils literal notranslate"><span class="pre">Branch.metadata</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.Branch.parent_branch"><code class="docutils literal notranslate"><span class="pre">Branch.parent_branch</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.Branch.parent_version"><code class="docutils literal notranslate"><span class="pre">Branch.parent_version</span></code></a></li>
 </ul>
@@ -450,6 +451,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.Branches.delete"><code class="docutils literal notranslate"><span class="pre">Branches.delete()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.Branches.list"><code class="docutils literal notranslate"><span class="pre">Branches.list()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.Branches.list_ordered"><code class="docutils literal notranslate"><span class="pre">Branches.list_ordered()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.dataset.Branches.replace_metadata"><code class="docutils literal notranslate"><span class="pre">Branches.replace_metadata()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#lance.dataset.BulkCommitResult"><code class="docutils literal notranslate"><span class="pre">BulkCommitResult</span></code></a><ul>
@@ -801,7 +803,10 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#lance.dataset.Tag"><code class="docutils literal notranslate"><span class="pre">Tag</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.Tag.branch"><code class="docutils literal notranslate"><span class="pre">Tag.branch</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.dataset.Tag.created_at"><code class="docutils literal notranslate"><span class="pre">Tag.created_at</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.Tag.manifest_size"><code class="docutils literal notranslate"><span class="pre">Tag.manifest_size</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.dataset.Tag.metadata"><code class="docutils literal notranslate"><span class="pre">Tag.metadata</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.dataset.Tag.updated_at"><code class="docutils literal notranslate"><span class="pre">Tag.updated_at</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.Tag.version"><code class="docutils literal notranslate"><span class="pre">Tag.version</span></code></a></li>
 </ul>
 </li>
@@ -811,6 +816,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.Tags.get_version"><code class="docutils literal notranslate"><span class="pre">Tags.get_version()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.Tags.list"><code class="docutils literal notranslate"><span class="pre">Tags.list()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.Tags.list_ordered"><code class="docutils literal notranslate"><span class="pre">Tags.list_ordered()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.dataset.Tags.replace_metadata"><code class="docutils literal notranslate"><span class="pre">Tags.replace_metadata()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.Tags.update"><code class="docutils literal notranslate"><span class="pre">Tags.update()</span></code></a></li>
 </ul>
 </li>
@@ -6084,6 +6090,11 @@ Must be provided together with <cite>namespace_client</cite>. Cannot be used wit
 <dd></dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="lance.dataset.Branch.metadata">
+<span class="sig-name descname"><span class="pre">metadata</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.14)"><span class="pre">Dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#lance.dataset.Branch.metadata" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="lance.dataset.Branch.parent_branch">
 <span class="sig-name descname"><span class="pre">parent_branch</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><a class="headerlink" href="#lance.dataset.Branch.parent_branch" title="Link to this definition"></a></dt>
 <dd></dd></dl>
@@ -6123,6 +6134,12 @@ Must be provided together with <cite>namespace_client</cite>. Cannot be used wit
 <dt class="sig sig-object py" id="lance.dataset.Branches.list_ordered">
 <span class="sig-name descname"><span class="pre">list_ordered</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.14)"><span class="pre">Tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#lance.dataset.Branch" title="lance.dataset.Branch"><span class="pre">Branch</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#lance.dataset.Branches.list_ordered" title="Link to this definition"></a></dt>
 <dd><p>List all dataset branches ordered by parent version.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.dataset.Branches.replace_metadata">
+<span class="sig-name descname"><span class="pre">replace_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">branch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.14)"><span class="pre">Dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#lance.dataset.Branches.replace_metadata" title="Link to this definition"></a></dt>
+<dd><p>Replace metadata for a branch.</p>
 </dd></dl>
 
 </dd></dl>
@@ -10419,8 +10436,23 @@ It is returned by <a class="reference internal" href="#lance.dataset.LanceDatase
 <dd></dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="lance.dataset.Tag.created_at">
+<span class="sig-name descname"><span class="pre">created_at</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.14)"><span class="pre">datetime</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><a class="headerlink" href="#lance.dataset.Tag.created_at" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="lance.dataset.Tag.manifest_size">
 <span class="sig-name descname"><span class="pre">manifest_size</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><a class="headerlink" href="#lance.dataset.Tag.manifest_size" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="lance.dataset.Tag.metadata">
+<span class="sig-name descname"><span class="pre">metadata</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.14)"><span class="pre">Dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#lance.dataset.Tag.metadata" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="lance.dataset.Tag.updated_at">
+<span class="sig-name descname"><span class="pre">updated_at</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.14)"><span class="pre">datetime</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><a class="headerlink" href="#lance.dataset.Tag.updated_at" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -10486,7 +10518,9 @@ version_number on the main branch.</p></li>
 <dd><p>List all dataset tags.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>A dictionary mapping tag names to version numbers.</p>
+<dd class="field-odd"><p>A dictionary mapping tag names to tag metadata, including the
+referenced branch, version, timestamps, manifest size, and any
+attached metadata.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a>, <a class="reference internal" href="#lance.dataset.Tag" title="lance.dataset.Tag">Tag</a>]</p>
@@ -10496,7 +10530,7 @@ version_number on the main branch.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="lance.dataset.Tags.list_ordered">
-<span class="sig-name descname"><span class="pre">list_ordered</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#lance.dataset.Tag" title="lance.dataset.Tag"><span class="pre">Tag</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#lance.dataset.Tags.list_ordered" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">list_ordered</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.14)"><span class="pre">Tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#lance.dataset.Tag" title="lance.dataset.Tag"><span class="pre">Tag</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#lance.dataset.Tags.list_ordered" title="Link to this definition"></a></dt>
 <dd><p>List all dataset tags.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -10508,9 +10542,19 @@ default ‘desc’.</p>
 <dd class="field-even"><p>An ordered list of tuples mapping tag names to its <cite>Tag</cite> metadata.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)">list</a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a>, <a class="reference internal" href="#lance.dataset.Tag" title="lance.dataset.Tag">Tag</a>]</p>
+<dd class="field-odd"><p>List[Tuple[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a>, <a class="reference internal" href="#lance.dataset.Tag" title="lance.dataset.Tag">Tag</a>]]</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.dataset.Tags.replace_metadata">
+<span class="sig-name descname"><span class="pre">replace_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.14)"><span class="pre">Dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#lance.dataset.Tags.replace_metadata" title="Link to this definition"></a></dt>
+<dd><p>Replace metadata for an existing tag.</p>
+<p>This replaces the entire metadata map instead of merging with existing
+keys. It does not change the tag reference, and it does not update
+<cite>updated_at</cite>. <cite>updated_at</cite> only changes when <cite>update()</cite> moves the tag
+to a different reference.</p>
 </dd></dl>
 
 <dl class="py method">

@@ -440,6 +440,7 @@
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.Branch.branch_identifier"><code class="docutils literal notranslate"><span class="pre">Branch.branch_identifier</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.Branch.create_at"><code class="docutils literal notranslate"><span class="pre">Branch.create_at</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.Branch.manifest_size"><code class="docutils literal notranslate"><span class="pre">Branch.manifest_size</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.Branch.metadata"><code class="docutils literal notranslate"><span class="pre">Branch.metadata</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.Branch.parent_branch"><code class="docutils literal notranslate"><span class="pre">Branch.parent_branch</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.Branch.parent_version"><code class="docutils literal notranslate"><span class="pre">Branch.parent_version</span></code></a></li>
 </ul>
@@ -448,6 +449,7 @@
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.Branches.delete"><code class="docutils literal notranslate"><span class="pre">Branches.delete()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.Branches.list"><code class="docutils literal notranslate"><span class="pre">Branches.list()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.Branches.list_ordered"><code class="docutils literal notranslate"><span class="pre">Branches.list_ordered()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.Branches.replace_metadata"><code class="docutils literal notranslate"><span class="pre">Branches.replace_metadata()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="all-modules.html#lance.dataset.BulkCommitResult"><code class="docutils literal notranslate"><span class="pre">BulkCommitResult</span></code></a><ul>
@@ -799,7 +801,10 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="all-modules.html#lance.dataset.Tag"><code class="docutils literal notranslate"><span class="pre">Tag</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.Tag.branch"><code class="docutils literal notranslate"><span class="pre">Tag.branch</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.Tag.created_at"><code class="docutils literal notranslate"><span class="pre">Tag.created_at</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.Tag.manifest_size"><code class="docutils literal notranslate"><span class="pre">Tag.manifest_size</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.Tag.metadata"><code class="docutils literal notranslate"><span class="pre">Tag.metadata</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.Tag.updated_at"><code class="docutils literal notranslate"><span class="pre">Tag.updated_at</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.Tag.version"><code class="docutils literal notranslate"><span class="pre">Tag.version</span></code></a></li>
 </ul>
 </li>
@@ -809,6 +814,7 @@
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.Tags.get_version"><code class="docutils literal notranslate"><span class="pre">Tags.get_version()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.Tags.list"><code class="docutils literal notranslate"><span class="pre">Tags.list()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.Tags.list_ordered"><code class="docutils literal notranslate"><span class="pre">Tags.list_ordered()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.Tags.replace_metadata"><code class="docutils literal notranslate"><span class="pre">Tags.replace_metadata()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all-modules.html#lance.dataset.Tags.update"><code class="docutils literal notranslate"><span class="pre">Tags.update()</span></code></a></li>
 </ul>
 </li>
@@ -1260,6 +1266,8 @@
       <li><a href="all-modules.html#lance.dataset.Index.created_at">created_at (lance.dataset.Index attribute)</a>
 
       <ul>
+        <li><a href="all-modules.html#lance.dataset.Tag.created_at">(lance.dataset.Tag attribute)</a>
+</li>
         <li><a href="all-modules.html#lance.Index.created_at">(lance.Index attribute)</a>
 </li>
       </ul></li>
@@ -2064,9 +2072,13 @@
         <li><a href="all-modules.html#lance.dataset.MergeInsertBuilder">(class in lance.dataset)</a>
 </li>
       </ul></li>
-      <li><a href="all-modules.html#lance.dataset.LanceDataset.metadata">metadata (lance.dataset.LanceDataset property)</a>
+      <li><a href="all-modules.html#lance.dataset.Branch.metadata">metadata (lance.dataset.Branch attribute)</a>
 
       <ul>
+        <li><a href="all-modules.html#lance.dataset.LanceDataset.metadata">(lance.dataset.LanceDataset property)</a>
+</li>
+        <li><a href="all-modules.html#lance.dataset.Tag.metadata">(lance.dataset.Tag attribute)</a>
+</li>
         <li><a href="all-modules.html#lance.dataset.Version.metadata">(lance.dataset.Version attribute)</a>
 </li>
         <li><a href="all-modules.html#lance.fragment.LanceFragment.metadata">(lance.fragment.LanceFragment property)</a>
@@ -2391,12 +2403,18 @@
         <li><a href="all-modules.html#id33">(lance.LanceOperation.UpdateMap attribute)</a>, <a href="all-modules.html#lance.LanceOperation.UpdateMap.replace">[1]</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="all-modules.html#lance.dataset.LanceDataset.replace_field_metadata">replace_field_metadata() (lance.dataset.LanceDataset method)</a>
 
       <ul>
         <li><a href="all-modules.html#lance.LanceDataset.replace_field_metadata">(lance.LanceDataset method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="all-modules.html#lance.dataset.Branches.replace_metadata">replace_metadata() (lance.dataset.Branches method)</a>
+
+      <ul>
+        <li><a href="all-modules.html#lance.dataset.Tags.replace_metadata">(lance.dataset.Tags method)</a>
 </li>
       </ul></li>
       <li><a href="all-modules.html#lance.dataset.LanceDataset.replace_schema">replace_schema() (lance.dataset.LanceDataset method)</a>
@@ -2757,6 +2775,10 @@
         <li><a href="all-modules.html#lance.LanceDataset.update_schema_metadata">(lance.LanceDataset method)</a>
 </li>
       </ul></li>
+      <li><a href="all-modules.html#lance.dataset.Tag.updated_at">updated_at (lance.dataset.Tag attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="all-modules.html#id47">updated_fragments (lance.dataset.LanceOperation.Delete attribute)</a>, <a href="all-modules.html#lance.dataset.LanceOperation.Delete.updated_fragments">[1]</a>
 
       <ul>
@@ -2767,8 +2789,6 @@
         <li><a href="all-modules.html#id28">(lance.LanceOperation.Update attribute)</a>, <a href="all-modules.html#lance.LanceOperation.Update.updated_fragments">[1]</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="all-modules.html#lance.dataset.UpdateResult">UpdateResult (class in lance.dataset)</a>
 </li>
       <li><a href="all-modules.html#id66">updates (lance.dataset.LanceOperation.UpdateMap attribute)</a>, <a href="all-modules.html#lance.dataset.LanceOperation.UpdateMap.updates">[1]</a>
