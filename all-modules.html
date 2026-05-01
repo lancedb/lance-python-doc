@@ -88,6 +88,15 @@
 <li class="toctree-l3"><a class="reference internal" href="#lance.DatasetBasePath.path"><code class="docutils literal notranslate"><span class="pre">DatasetBasePath.path</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#lance.ExecutionPlan"><code class="docutils literal notranslate"><span class="pre">ExecutionPlan</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#lance.ExecutionPlan.dataset_schema"><code class="docutils literal notranslate"><span class="pre">ExecutionPlan.dataset_schema</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.ExecutionPlan.explain"><code class="docutils literal notranslate"><span class="pre">ExecutionPlan.explain()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.ExecutionPlan.schema"><code class="docutils literal notranslate"><span class="pre">ExecutionPlan.schema</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.ExecutionPlan.to_batches"><code class="docutils literal notranslate"><span class="pre">ExecutionPlan.to_batches()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.ExecutionPlan.to_reader"><code class="docutils literal notranslate"><span class="pre">ExecutionPlan.to_reader()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.ExecutionPlan.to_table"><code class="docutils literal notranslate"><span class="pre">ExecutionPlan.to_table()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#lance.FFILanceTableProvider"><code class="docutils literal notranslate"><span class="pre">FFILanceTableProvider</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lance.FieldStatistics"><code class="docutils literal notranslate"><span class="pre">FieldStatistics</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#lance.FieldStatistics.bytes_on_disk"><code class="docutils literal notranslate"><span class="pre">FieldStatistics.bytes_on_disk</span></code></a></li>
@@ -179,6 +188,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#lance.LanceDataset.head"><code class="docutils literal notranslate"><span class="pre">LanceDataset.head()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.LanceDataset.index_statistics"><code class="docutils literal notranslate"><span class="pre">LanceDataset.index_statistics()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.LanceDataset.initial_storage_options"><code class="docutils literal notranslate"><span class="pre">LanceDataset.initial_storage_options</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.LanceDataset.initialize_mem_wal"><code class="docutils literal notranslate"><span class="pre">LanceDataset.initialize_mem_wal()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.LanceDataset.insert"><code class="docutils literal notranslate"><span class="pre">LanceDataset.insert()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.LanceDataset.io_stats_incremental"><code class="docutils literal notranslate"><span class="pre">LanceDataset.io_stats_incremental()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.LanceDataset.io_stats_snapshot"><code class="docutils literal notranslate"><span class="pre">LanceDataset.io_stats_snapshot()</span></code></a></li>
@@ -188,6 +198,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#lance.LanceDataset.latest_version"><code class="docutils literal notranslate"><span class="pre">LanceDataset.latest_version</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.LanceDataset.list_indices"><code class="docutils literal notranslate"><span class="pre">LanceDataset.list_indices()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.LanceDataset.max_field_id"><code class="docutils literal notranslate"><span class="pre">LanceDataset.max_field_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.LanceDataset.mem_wal_writer"><code class="docutils literal notranslate"><span class="pre">LanceDataset.mem_wal_writer()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.LanceDataset.merge"><code class="docutils literal notranslate"><span class="pre">LanceDataset.merge()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.LanceDataset.merge_existing_index_segments"><code class="docutils literal notranslate"><span class="pre">LanceDataset.merge_existing_index_segments()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.LanceDataset.merge_index_metadata"><code class="docutils literal notranslate"><span class="pre">LanceDataset.merge_index_metadata()</span></code></a></li>
@@ -384,12 +395,34 @@
 <li class="toctree-l3"><a class="reference internal" href="#lance.LanceScanner.to_table"><code class="docutils literal notranslate"><span class="pre">LanceScanner.to_table()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#lance.LsmPointLookupPlanner"><code class="docutils literal notranslate"><span class="pre">LsmPointLookupPlanner</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#lance.LsmPointLookupPlanner.plan_lookup"><code class="docutils literal notranslate"><span class="pre">LsmPointLookupPlanner.plan_lookup()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#lance.LsmScanner"><code class="docutils literal notranslate"><span class="pre">LsmScanner</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#lance.LsmScanner.count_rows"><code class="docutils literal notranslate"><span class="pre">LsmScanner.count_rows()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.LsmScanner.filter"><code class="docutils literal notranslate"><span class="pre">LsmScanner.filter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.LsmScanner.from_snapshots"><code class="docutils literal notranslate"><span class="pre">LsmScanner.from_snapshots()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.LsmScanner.limit"><code class="docutils literal notranslate"><span class="pre">LsmScanner.limit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.LsmScanner.project"><code class="docutils literal notranslate"><span class="pre">LsmScanner.project()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.LsmScanner.to_batch"><code class="docutils literal notranslate"><span class="pre">LsmScanner.to_batch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.LsmScanner.to_batches"><code class="docutils literal notranslate"><span class="pre">LsmScanner.to_batches()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.LsmScanner.to_table"><code class="docutils literal notranslate"><span class="pre">LsmScanner.to_table()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.LsmScanner.with_memtable_gen"><code class="docutils literal notranslate"><span class="pre">LsmScanner.with_memtable_gen()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.LsmScanner.with_row_address"><code class="docutils literal notranslate"><span class="pre">LsmScanner.with_row_address()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#lance.LsmVectorSearchPlanner"><code class="docutils literal notranslate"><span class="pre">LsmVectorSearchPlanner</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#lance.LsmVectorSearchPlanner.plan_search"><code class="docutils literal notranslate"><span class="pre">LsmVectorSearchPlanner.plan_search()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#lance.MergeInsertBuilder"><code class="docutils literal notranslate"><span class="pre">MergeInsertBuilder</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#lance.MergeInsertBuilder.analyze_plan"><code class="docutils literal notranslate"><span class="pre">MergeInsertBuilder.analyze_plan()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.MergeInsertBuilder.conflict_retries"><code class="docutils literal notranslate"><span class="pre">MergeInsertBuilder.conflict_retries()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.MergeInsertBuilder.execute"><code class="docutils literal notranslate"><span class="pre">MergeInsertBuilder.execute()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.MergeInsertBuilder.execute_uncommitted"><code class="docutils literal notranslate"><span class="pre">MergeInsertBuilder.execute_uncommitted()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.MergeInsertBuilder.explain_plan"><code class="docutils literal notranslate"><span class="pre">MergeInsertBuilder.explain_plan()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.MergeInsertBuilder.mark_generations_as_merged"><code class="docutils literal notranslate"><span class="pre">MergeInsertBuilder.mark_generations_as_merged()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.MergeInsertBuilder.retry_timeout"><code class="docutils literal notranslate"><span class="pre">MergeInsertBuilder.retry_timeout()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.MergeInsertBuilder.use_index"><code class="docutils literal notranslate"><span class="pre">MergeInsertBuilder.use_index()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.MergeInsertBuilder.when_matched_delete"><code class="docutils literal notranslate"><span class="pre">MergeInsertBuilder.when_matched_delete()</span></code></a></li>
@@ -397,6 +430,41 @@
 <li class="toctree-l3"><a class="reference internal" href="#lance.MergeInsertBuilder.when_matched_update_all"><code class="docutils literal notranslate"><span class="pre">MergeInsertBuilder.when_matched_update_all()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.MergeInsertBuilder.when_not_matched_by_source_delete"><code class="docutils literal notranslate"><span class="pre">MergeInsertBuilder.when_not_matched_by_source_delete()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.MergeInsertBuilder.when_not_matched_insert_all"><code class="docutils literal notranslate"><span class="pre">MergeInsertBuilder.when_not_matched_insert_all()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#lance.MergedGeneration"><code class="docutils literal notranslate"><span class="pre">MergedGeneration</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#lance.MergedGeneration.generation"><code class="docutils literal notranslate"><span class="pre">MergedGeneration.generation</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.MergedGeneration.region_id"><code class="docutils literal notranslate"><span class="pre">MergedGeneration.region_id</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#lance.RegionField"><code class="docutils literal notranslate"><span class="pre">RegionField</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#lance.RegionField.expression"><code class="docutils literal notranslate"><span class="pre">RegionField.expression</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.RegionField.field_id"><code class="docutils literal notranslate"><span class="pre">RegionField.field_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.RegionField.parameters"><code class="docutils literal notranslate"><span class="pre">RegionField.parameters</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.RegionField.result_type"><code class="docutils literal notranslate"><span class="pre">RegionField.result_type</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.RegionField.source_ids"><code class="docutils literal notranslate"><span class="pre">RegionField.source_ids</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.RegionField.transform"><code class="docutils literal notranslate"><span class="pre">RegionField.transform</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#lance.RegionSnapshot"><code class="docutils literal notranslate"><span class="pre">RegionSnapshot</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#lance.RegionSnapshot.region_id"><code class="docutils literal notranslate"><span class="pre">RegionSnapshot.region_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.RegionSnapshot.with_current_generation"><code class="docutils literal notranslate"><span class="pre">RegionSnapshot.with_current_generation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.RegionSnapshot.with_flushed_generation"><code class="docutils literal notranslate"><span class="pre">RegionSnapshot.with_flushed_generation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.RegionSnapshot.with_spec_id"><code class="docutils literal notranslate"><span class="pre">RegionSnapshot.with_spec_id()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#lance.RegionSpec"><code class="docutils literal notranslate"><span class="pre">RegionSpec</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#lance.RegionSpec.fields"><code class="docutils literal notranslate"><span class="pre">RegionSpec.fields</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.RegionSpec.spec_id"><code class="docutils literal notranslate"><span class="pre">RegionSpec.spec_id</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#lance.RegionWriter"><code class="docutils literal notranslate"><span class="pre">RegionWriter</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#lance.RegionWriter.close"><code class="docutils literal notranslate"><span class="pre">RegionWriter.close()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.RegionWriter.lsm_scanner"><code class="docutils literal notranslate"><span class="pre">RegionWriter.lsm_scanner()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.RegionWriter.memtable_stats"><code class="docutils literal notranslate"><span class="pre">RegionWriter.memtable_stats()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.RegionWriter.put"><code class="docutils literal notranslate"><span class="pre">RegionWriter.put()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.RegionWriter.region_id"><code class="docutils literal notranslate"><span class="pre">RegionWriter.region_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.RegionWriter.stats"><code class="docutils literal notranslate"><span class="pre">RegionWriter.stats()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#lance.ScanStatistics"><code class="docutils literal notranslate"><span class="pre">ScanStatistics</span></code></a><ul>
@@ -557,6 +625,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.LanceDataset.head"><code class="docutils literal notranslate"><span class="pre">LanceDataset.head()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.LanceDataset.index_statistics"><code class="docutils literal notranslate"><span class="pre">LanceDataset.index_statistics()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.LanceDataset.initial_storage_options"><code class="docutils literal notranslate"><span class="pre">LanceDataset.initial_storage_options</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.dataset.LanceDataset.initialize_mem_wal"><code class="docutils literal notranslate"><span class="pre">LanceDataset.initialize_mem_wal()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.LanceDataset.insert"><code class="docutils literal notranslate"><span class="pre">LanceDataset.insert()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.LanceDataset.io_stats_incremental"><code class="docutils literal notranslate"><span class="pre">LanceDataset.io_stats_incremental()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.LanceDataset.io_stats_snapshot"><code class="docutils literal notranslate"><span class="pre">LanceDataset.io_stats_snapshot()</span></code></a></li>
@@ -566,6 +635,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.LanceDataset.latest_version"><code class="docutils literal notranslate"><span class="pre">LanceDataset.latest_version</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.LanceDataset.list_indices"><code class="docutils literal notranslate"><span class="pre">LanceDataset.list_indices()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.LanceDataset.max_field_id"><code class="docutils literal notranslate"><span class="pre">LanceDataset.max_field_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.dataset.LanceDataset.mem_wal_writer"><code class="docutils literal notranslate"><span class="pre">LanceDataset.mem_wal_writer()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.LanceDataset.merge"><code class="docutils literal notranslate"><span class="pre">LanceDataset.merge()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.LanceDataset.merge_existing_index_segments"><code class="docutils literal notranslate"><span class="pre">LanceDataset.merge_existing_index_segments()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.LanceDataset.merge_index_metadata"><code class="docutils literal notranslate"><span class="pre">LanceDataset.merge_index_metadata()</span></code></a></li>
@@ -748,6 +818,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.MergeInsertBuilder.execute"><code class="docutils literal notranslate"><span class="pre">MergeInsertBuilder.execute()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.MergeInsertBuilder.execute_uncommitted"><code class="docutils literal notranslate"><span class="pre">MergeInsertBuilder.execute_uncommitted()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.MergeInsertBuilder.explain_plan"><code class="docutils literal notranslate"><span class="pre">MergeInsertBuilder.explain_plan()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lance.dataset.MergeInsertBuilder.mark_generations_as_merged"><code class="docutils literal notranslate"><span class="pre">MergeInsertBuilder.mark_generations_as_merged()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.MergeInsertBuilder.retry_timeout"><code class="docutils literal notranslate"><span class="pre">MergeInsertBuilder.retry_timeout()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.MergeInsertBuilder.use_index"><code class="docutils literal notranslate"><span class="pre">MergeInsertBuilder.use_index()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lance.dataset.MergeInsertBuilder.when_matched_delete"><code class="docutils literal notranslate"><span class="pre">MergeInsertBuilder.when_matched_delete()</span></code></a></li>
@@ -1162,6 +1233,55 @@ This method may need to do a test seek().</p>
 <dt class="sig sig-object py" id="lance.DatasetBasePath.path">
 <span class="sig-name descname"><span class="pre">path</span></span><a class="headerlink" href="#lance.DatasetBasePath.path" title="Link to this definition"></a></dt>
 <dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="lance.ExecutionPlan">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">lance.</span></span><span class="sig-name descname"><span class="pre">ExecutionPlan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_raw</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_ExecutionPlan</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lance.ExecutionPlan" title="Link to this definition"></a></dt>
+<dd><p>Executable physical plan returned by MemWAL planners.</p>
+<p>This wraps the Rust/DataFusion physical plan object. Planner classes only
+construct plans; execution happens through this class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>_raw</strong> (<em>_ExecutionPlan</em>)</p>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="lance.ExecutionPlan.dataset_schema">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">dataset_schema</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://arrow.apache.org/docs/python/generated/pyarrow.Schema.html#pyarrow.Schema" title="(in Apache Arrow v24.0.0)"><span class="pre">Schema</span></a></span><a class="headerlink" href="#lance.ExecutionPlan.dataset_schema" title="Link to this definition"></a></dt>
+<dd><p>Base dataset schema used to construct this plan.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.ExecutionPlan.explain">
+<span class="sig-name descname"><span class="pre">explain</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#lance.ExecutionPlan.explain" title="Link to this definition"></a></dt>
+<dd><p>Return the physical plan as an indented string.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="lance.ExecutionPlan.schema">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">schema</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://arrow.apache.org/docs/python/generated/pyarrow.Schema.html#pyarrow.Schema" title="(in Apache Arrow v24.0.0)"><span class="pre">Schema</span></a></span><a class="headerlink" href="#lance.ExecutionPlan.schema" title="Link to this definition"></a></dt>
+<dd><p>Output schema of this physical plan.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.ExecutionPlan.to_batches">
+<span class="sig-name descname"><span class="pre">to_batches</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://arrow.apache.org/docs/python/generated/pyarrow.RecordBatch.html#pyarrow.RecordBatch" title="(in Apache Arrow v24.0.0)"><span class="pre">RecordBatch</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#lance.ExecutionPlan.to_batches" title="Link to this definition"></a></dt>
+<dd><p>Execute the plan and return all record batches.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.ExecutionPlan.to_reader">
+<span class="sig-name descname"><span class="pre">to_reader</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://arrow.apache.org/docs/python/generated/pyarrow.RecordBatchReader.html#pyarrow.RecordBatchReader" title="(in Apache Arrow v24.0.0)"><span class="pre">RecordBatchReader</span></a></span></span><a class="headerlink" href="#lance.ExecutionPlan.to_reader" title="Link to this definition"></a></dt>
+<dd><p>Execute the plan and return a streaming reader.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.ExecutionPlan.to_table">
+<span class="sig-name descname"><span class="pre">to_table</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://arrow.apache.org/docs/python/generated/pyarrow.Table.html#pyarrow.Table" title="(in Apache Arrow v24.0.0)"><span class="pre">Table</span></a></span></span><a class="headerlink" href="#lance.ExecutionPlan.to_table" title="Link to this definition"></a></dt>
+<dd><p>Execute the plan and return a table.</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -2550,6 +2670,62 @@ were provided.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="lance.LanceDataset.initialize_mem_wal">
+<span class="sig-name descname"><span class="pre">initialize_mem_wal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">maintained_indexes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">region_spec</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'mem_wal.RegionSpec'</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#lance.LanceDataset.initialize_mem_wal" title="Link to this definition"></a></dt>
+<dd><p>Initialize MemWAL on this dataset.</p>
+<p>Must be called once before any calls to <cite>mem_wal_writer</cite>.
+The dataset schema must have at least one field annotated with
+the <code class="docutils literal notranslate"><span class="pre">lance-schema:unenforced-primary-key</span></code> Arrow field metadata.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>maintained_indexes</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em> of </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><em>optional</em>) – Names of existing vector indexes to keep updated as data is
+written through the MemWAL.  Must reference indexes that
+already exist on the dataset.</p></li>
+<li><p><strong>region_spec</strong> (<a class="reference internal" href="#lance.RegionSpec" title="lance.RegionSpec"><em>RegionSpec</em></a><em>, </em><em>optional</em>) – Partitioning specification for automatic region routing.
+When provided, Lance will derive a region identifier from each
+written row according to the spec and route writes to the
+correct <cite>~lance.mem_wal.RegionWriter</cite> automatically.
+When <code class="docutils literal notranslate"><span class="pre">None</span></code> (default), the caller must manage region IDs
+manually by passing them to <cite>mem_wal_writer</cite>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IOError" title="(in Python v3.14)"><strong>IOError</strong></a> – <ul class="simple">
+<li><p>Dataset has no <code class="docutils literal notranslate"><span class="pre">lance-schema:unenforced-primary-key</span></code> field.
+    - An entry in <em>maintained_indexes</em> does not exist on the dataset.
+    - MemWAL has already been initialized on this dataset.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Without region spec (manual region management):</p>
+<p>import lance
+import pyarrow as pa
+import tempfile
+schema = pa.schema([
+…     pa.field(“id”, pa.int64(), nullable=False,
+…              metadata={“lance-schema:unenforced-primary-key”: “true”}),
+…     pa.field(“val”, pa.float32()),
+… ])
+table = pa.table({“id”: [1], “val”: [0.1]}, schema=schema)
+with tempfile.TemporaryDirectory() as tmpdir:</p>
+<blockquote>
+<div><p>ds = lance.write_dataset(table, tmpdir)
+ds.initialize_mem_wal()</p>
+</div></blockquote>
+<p>With a region spec for automatic routing by <code class="docutils literal notranslate"><span class="pre">tenant_id</span></code>:</p>
+<p>from lance.mem_wal import RegionField, RegionSpec
+spec = RegionSpec(
+…     spec_id=1,
+…     fields=[RegionField(field_id=”tenant_id”, source_ids=[0],
+…                        result_type=”int64”)],
+… )
+ds.initialize_mem_wal(region_spec=spec)</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="lance.LanceDataset.insert">
 <span class="sig-name descname"><span class="pre">insert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ReaderLike</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'append'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lance.LanceDataset.insert" title="Link to this definition"></a></dt>
 <dd><p>Insert data into the dataset.</p>
@@ -2719,6 +2895,67 @@ individual indexes of interest.</p>
 <dt class="sig sig-object py" id="lance.LanceDataset.max_field_id">
 <span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">max_field_id</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><a class="headerlink" href="#lance.LanceDataset.max_field_id" title="Link to this definition"></a></dt>
 <dd><p>The max_field_id in manifest</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.LanceDataset.mem_wal_writer">
+<span class="sig-name descname"><span class="pre">mem_wal_writer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">region_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">durable_write</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sync_indexed_write</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_wal_buffer_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_wal_flush_interval_ms</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_memtable_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_memtable_rows</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_memtable_batches</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_unflushed_memtable_bytes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ivf_index_partition_capacity_safety_factor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">manifest_scan_batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">async_index_buffer_rows</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">async_index_interval_ms</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backpressure_log_interval_ms</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stats_log_interval_ms</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#lance.RegionWriter" title="lance.mem_wal.RegionWriter"><span class="pre">mem_wal.RegionWriter</span></a></span></span><a class="headerlink" href="#lance.LanceDataset.mem_wal_writer" title="Link to this definition"></a></dt>
+<dd><p>Get a RegionWriter for the specified region.</p>
+<p><cite>initialize_mem_wal</cite> must be called before using this method.
+Each <em>region</em> is an independent write shard; use different region IDs
+to achieve parallel ingestion without writer contention.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>region_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – UUID string identifying the write region (e.g.
+<code class="docutils literal notranslate"><span class="pre">str(uuid.uuid4())</span></code>).</p></li>
+<li><p><strong>durable_write</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em>, </em><em>optional</em>) – Whether to fsync WAL writes (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>).</p></li>
+<li><p><strong>sync_indexed_write</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em>, </em><em>optional</em>) – Whether index updates are synchronous (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>).</p></li>
+<li><p><strong>max_wal_buffer_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – Maximum WAL buffer size in bytes (default: 10 MB).</p></li>
+<li><p><strong>max_wal_flush_interval_ms</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – Maximum WAL flush interval in milliseconds (default: 100).</p></li>
+<li><p><strong>max_memtable_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – Maximum MemTable size in bytes (default: 256 MB).</p></li>
+<li><p><strong>max_memtable_rows</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – Maximum rows per MemTable (default: 100 000).</p></li>
+<li><p><strong>max_memtable_batches</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – Maximum batches per MemTable (default: 8 000).</p></li>
+<li><p><strong>max_unflushed_memtable_bytes</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – Maximum unflushed bytes before backpressure (default: 1 GB).</p></li>
+<li><p><strong>ivf_index_partition_capacity_safety_factor</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – Safety factor for IVF partition capacity (default: 8).</p></li>
+<li><p><strong>manifest_scan_batch_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – Batch size for manifest scans (default: 2).</p></li>
+<li><p><strong>async_index_buffer_rows</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – Buffer rows for async index updates (default: 10 000).</p></li>
+<li><p><strong>async_index_interval_ms</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – Interval for async index updates in milliseconds (default: 1000).</p></li>
+<li><p><strong>backpressure_log_interval_ms</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – Interval for backpressure log messages in milliseconds
+(default: 30 000).</p></li>
+<li><p><strong>stats_log_interval_ms</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – Interval for statistics log messages in milliseconds
+(default: 60 000).  Pass <code class="docutils literal notranslate"><span class="pre">0</span></code> to disable.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A context-manager-compatible writer for the specified region.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#lance.RegionWriter" title="lance.RegionWriter">RegionWriter</a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">lance</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pa</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">tempfile</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">uuid</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">schema</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">schema</span><span class="p">([</span>
+<span class="gp">... </span>    <span class="n">pa</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">int64</span><span class="p">(),</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="gp">... </span>             <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;lance-schema:unenforced-primary-key&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">}),</span>
+<span class="gp">... </span>    <span class="n">pa</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s2">&quot;val&quot;</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">float32</span><span class="p">()),</span>
+<span class="gp">... </span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">TemporaryDirectory</span><span class="p">()</span> <span class="k">as</span> <span class="n">tmpdir</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">ds</span> <span class="o">=</span> <span class="n">lance</span><span class="o">.</span><span class="n">write_dataset</span><span class="p">(</span>
+<span class="gp">... </span>        <span class="n">pa</span><span class="o">.</span><span class="n">table</span><span class="p">({</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;val&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">]},</span> <span class="n">schema</span><span class="o">=</span><span class="n">schema</span><span class="p">),</span>
+<span class="gp">... </span>        <span class="n">tmpdir</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="p">)</span>
+<span class="gp">... </span>    <span class="n">ds</span><span class="o">.</span><span class="n">initialize_mem_wal</span><span class="p">()</span>
+<span class="gp">... </span>    <span class="n">region_id</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">())</span>
+<span class="gp">... </span>    <span class="n">new_data</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">table</span><span class="p">({</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="s2">&quot;val&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">]},</span> <span class="n">schema</span><span class="o">=</span><span class="n">schema</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">with</span> <span class="n">ds</span><span class="o">.</span><span class="n">mem_wal_writer</span><span class="p">(</span><span class="n">region_id</span><span class="p">)</span> <span class="k">as</span> <span class="n">writer</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="n">writer</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">new_data</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -5397,6 +5634,186 @@ If False, merge the new entries with the existing map.</p>
 </dd></dl>
 
 <dl class="py class">
+<dt class="sig sig-object py" id="lance.LsmPointLookupPlanner">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">lance.</span></span><span class="sig-name descname"><span class="pre">LsmPointLookupPlanner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#lance.LanceDataset" title="lance.LanceDataset"><span class="pre">lance.LanceDataset</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">region_snapshots</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#lance.RegionSnapshot" title="lance.RegionSnapshot"><span class="pre">RegionSnapshot</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pk_columns</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lance.LsmPointLookupPlanner" title="Link to this definition"></a></dt>
+<dd><p>Plans primary-key point lookups across all LSM levels.</p>
+<p>More efficient than <cite>LsmScanner</cite> for known-PK lookups due to
+bloom filter optimizations and short-circuit evaluation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset</strong> (<a class="reference internal" href="#lance.LanceDataset" title="lance.LanceDataset"><em>LanceDataset</em></a>) – The base dataset.</p></li>
+<li><p><strong>region_snapshots</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em> of </em><a class="reference internal" href="#lance.RegionSnapshot" title="lance.RegionSnapshot"><em>RegionSnapshot</em></a>) – Region snapshots specifying flushed generations to include.</p></li>
+<li><p><strong>pk_columns</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em> of </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><em>optional</em>) – Primary key column names.  Inferred from schema metadata if omitted.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>planner = LsmPointLookupPlanner(dataset, [snapshot])
+plan = planner.plan_lookup(pa.array([42], type=pa.int64()))
+result = plan.to_table()</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.LsmPointLookupPlanner.plan_lookup">
+<span class="sig-name descname"><span class="pre">plan_lookup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pk_value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://arrow.apache.org/docs/python/generated/pyarrow.Array.html#pyarrow.Array" title="(in Apache Arrow v24.0.0)"><span class="pre">Array</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#lance.ExecutionPlan" title="lance.mem_wal.ExecutionPlan"><span class="pre">ExecutionPlan</span></a></span></span><a class="headerlink" href="#lance.LsmPointLookupPlanner.plan_lookup" title="Link to this definition"></a></dt>
+<dd><p>Plan a point lookup by primary key value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pk_value</strong> (<em>pa.Array</em>) – For single-column primary keys, a PyArrow array with exactly one
+element. For composite primary keys, a single-row
+<cite>pyarrow.StructArray</cite> with one field per primary-key column.</p></li>
+<li><p><strong>columns</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em> of </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><em>optional</em>) – Columns to project. Returns all columns if omitted.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Physical plan for the lookup. Execute it via <cite>to_table</cite>,
+<cite>to_reader</cite>, or <cite>to_batches</cite>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#lance.ExecutionPlan" title="lance.ExecutionPlan">ExecutionPlan</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="lance.LsmScanner">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">lance.</span></span><span class="sig-name descname"><span class="pre">LsmScanner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_raw</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_LsmScanner</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lance.LsmScanner" title="Link to this definition"></a></dt>
+<dd><p>LSM-aware scanner covering all data levels.</p>
+<p>Deduplicates by primary key, always returning the newest version of
+each row across base table, flushed MemTables, and the active MemTable.</p>
+<p>Obtain an instance from <cite>RegionWriter.lsm_scanner</cite> (includes
+active MemTable) or <cite>LsmScanner.from_snapshots</cite> (flushed only).</p>
+<p>The builder methods (<cite>project</cite>, <cite>filter</cite>, <cite>limit</cite>)
+return <code class="docutils literal notranslate"><span class="pre">self</span></code> for chaining.</p>
+<p class="rubric">Examples</p>
+<p>scanner = LsmScanner.from_snapshots(dataset, [snapshot])
+scanner.project([“id”, “value”]).filter(“value &gt; 0.5”)
+table = scanner.to_table()</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.LsmScanner.count_rows">
+<span class="sig-name descname"><span class="pre">count_rows</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></span><a class="headerlink" href="#lance.LsmScanner.count_rows" title="Link to this definition"></a></dt>
+<dd><p>Return the row count without loading all column data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.LsmScanner.filter">
+<span class="sig-name descname"><span class="pre">filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#lance.LsmScanner" title="lance.mem_wal.LsmScanner"><span class="pre">LsmScanner</span></a></span></span><a class="headerlink" href="#lance.LsmScanner.filter" title="Link to this definition"></a></dt>
+<dd><p>Set a SQL filter expression (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;value</span> <span class="pre">&gt;</span> <span class="pre">0.5&quot;</span></code>).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.LsmScanner.from_snapshots">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">from_snapshots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#lance.LanceDataset" title="lance.LanceDataset"><span class="pre">lance.LanceDataset</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">region_snapshots</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#lance.RegionSnapshot" title="lance.RegionSnapshot"><span class="pre">RegionSnapshot</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#lance.LsmScanner" title="lance.LsmScanner"><span class="pre">LsmScanner</span></a></span></span><a class="headerlink" href="#lance.LsmScanner.from_snapshots" title="Link to this definition"></a></dt>
+<dd><p>Create a scanner from dataset and region snapshots.</p>
+<p>Does <strong>not</strong> include the active MemTable; use
+<cite>RegionWriter.lsm_scanner</cite> for that.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset</strong> (<a class="reference internal" href="#lance.LanceDataset" title="lance.LanceDataset"><em>LanceDataset</em></a>) – The base dataset to scan.</p></li>
+<li><p><strong>region_snapshots</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em> of </em><a class="reference internal" href="#lance.RegionSnapshot" title="lance.RegionSnapshot"><em>RegionSnapshot</em></a>) – Region snapshots specifying flushed generations to include.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.LsmScanner.limit">
+<span class="sig-name descname"><span class="pre">limit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#lance.LsmScanner" title="lance.mem_wal.LsmScanner"><span class="pre">LsmScanner</span></a></span></span><a class="headerlink" href="#lance.LsmScanner.limit" title="Link to this definition"></a></dt>
+<dd><p>Limit rows returned, optionally with an offset.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.LsmScanner.project">
+<span class="sig-name descname"><span class="pre">project</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#lance.LsmScanner" title="lance.mem_wal.LsmScanner"><span class="pre">LsmScanner</span></a></span></span><a class="headerlink" href="#lance.LsmScanner.project" title="Link to this definition"></a></dt>
+<dd><p>Select specific columns to return.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.LsmScanner.to_batch">
+<span class="sig-name descname"><span class="pre">to_batch</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://arrow.apache.org/docs/python/generated/pyarrow.RecordBatch.html#pyarrow.RecordBatch" title="(in Apache Arrow v24.0.0)"><span class="pre">RecordBatch</span></a></span></span><a class="headerlink" href="#lance.LsmScanner.to_batch" title="Link to this definition"></a></dt>
+<dd><p>Execute the scan and return a single merged <a class="reference external" href="https://arrow.apache.org/docs/python/generated/pyarrow.RecordBatch.html#pyarrow.RecordBatch" title="(in Apache Arrow v24.0.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">RecordBatch</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.LsmScanner.to_batches">
+<span class="sig-name descname"><span class="pre">to_batches</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://arrow.apache.org/docs/python/generated/pyarrow.RecordBatch.html#pyarrow.RecordBatch" title="(in Apache Arrow v24.0.0)"><span class="pre">RecordBatch</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#lance.LsmScanner.to_batches" title="Link to this definition"></a></dt>
+<dd><p>Execute the scan and return a list of <a class="reference external" href="https://arrow.apache.org/docs/python/generated/pyarrow.RecordBatch.html#pyarrow.RecordBatch" title="(in Apache Arrow v24.0.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">RecordBatch</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.LsmScanner.to_table">
+<span class="sig-name descname"><span class="pre">to_table</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://arrow.apache.org/docs/python/generated/pyarrow.Table.html#pyarrow.Table" title="(in Apache Arrow v24.0.0)"><span class="pre">Table</span></a></span></span><a class="headerlink" href="#lance.LsmScanner.to_table" title="Link to this definition"></a></dt>
+<dd><p>Execute the scan and return a <a class="reference external" href="https://arrow.apache.org/docs/python/generated/pyarrow.Table.html#pyarrow.Table" title="(in Apache Arrow v24.0.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Table</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.LsmScanner.with_memtable_gen">
+<span class="sig-name descname"><span class="pre">with_memtable_gen</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#lance.LsmScanner" title="lance.mem_wal.LsmScanner"><span class="pre">LsmScanner</span></a></span></span><a class="headerlink" href="#lance.LsmScanner.with_memtable_gen" title="Link to this definition"></a></dt>
+<dd><p>Include the <code class="docutils literal notranslate"><span class="pre">_memtable_gen</span></code> internal column in results.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.LsmScanner.with_row_address">
+<span class="sig-name descname"><span class="pre">with_row_address</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#lance.LsmScanner" title="lance.mem_wal.LsmScanner"><span class="pre">LsmScanner</span></a></span></span><a class="headerlink" href="#lance.LsmScanner.with_row_address" title="Link to this definition"></a></dt>
+<dd><p>Include the <code class="docutils literal notranslate"><span class="pre">_rowaddr</span></code> internal column in results.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="lance.LsmVectorSearchPlanner">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">lance.</span></span><span class="sig-name descname"><span class="pre">LsmVectorSearchPlanner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#lance.LanceDataset" title="lance.LanceDataset"><span class="pre">lance.LanceDataset</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">region_snapshots</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#lance.RegionSnapshot" title="lance.RegionSnapshot"><span class="pre">RegionSnapshot</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vector_column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">pk_columns</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lance.LsmVectorSearchPlanner" title="Link to this definition"></a></dt>
+<dd><p>Plans IVF-PQ vector KNN search across all LSM levels.</p>
+<p>Results include staleness filtering to return only the latest version
+of each row. The output schema includes the <code class="docutils literal notranslate"><span class="pre">_distance</span></code> column.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset</strong> (<a class="reference internal" href="#lance.LanceDataset" title="lance.LanceDataset"><em>LanceDataset</em></a>) – The base dataset.</p></li>
+<li><p><strong>region_snapshots</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em> of </em><a class="reference internal" href="#lance.RegionSnapshot" title="lance.RegionSnapshot"><em>RegionSnapshot</em></a>) – Region snapshots specifying flushed generations to include.</p></li>
+<li><p><strong>vector_column</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Name of the <code class="docutils literal notranslate"><span class="pre">FixedSizeList&lt;float32&gt;</span></code> vector column.</p></li>
+<li><p><strong>pk_columns</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em> of </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><em>optional</em>) – Primary key columns.  Inferred from schema metadata if omitted.</p></li>
+<li><p><strong>distance_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><em>optional</em>) – Distance metric — one of <code class="docutils literal notranslate"><span class="pre">&quot;l2&quot;</span></code> (default), <code class="docutils literal notranslate"><span class="pre">&quot;cosine&quot;</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&quot;dot&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;hamming&quot;</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>import numpy as np
+planner = LsmVectorSearchPlanner(dataset, [snapshot], “vector”)
+query = pa.array(np.random.rand(128).astype(“float32”))
+plan = planner.plan_search(query, k=10)
+result = plan.to_table()</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.LsmVectorSearchPlanner.plan_search">
+<span class="sig-name descname"><span class="pre">plan_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://arrow.apache.org/docs/python/generated/pyarrow.Array.html#pyarrow.Array" title="(in Apache Arrow v24.0.0)"><span class="pre">Array</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nprobes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#lance.ExecutionPlan" title="lance.mem_wal.ExecutionPlan"><span class="pre">ExecutionPlan</span></a></span></span><a class="headerlink" href="#lance.LsmVectorSearchPlanner.plan_search" title="Link to this definition"></a></dt>
+<dd><p>Plan a KNN vector search.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>query</strong> (<em>pa.Array</em>) – A flat <code class="docutils literal notranslate"><span class="pre">Float32Array</span></code> of length <code class="docutils literal notranslate"><span class="pre">vector_dim</span></code>.</p></li>
+<li><p><strong>k</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – Number of nearest neighbours to return (default: 10).</p></li>
+<li><p><strong>nprobes</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – Number of IVF partitions to probe (default: 20).</p></li>
+<li><p><strong>columns</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em> of </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><em>optional</em>) – Columns to project.  Returns all columns + <code class="docutils literal notranslate"><span class="pre">_distance</span></code> if
+omitted.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Physical plan for the vector search. Execute it via
+<cite>to_table</cite>, <cite>to_reader</cite>, or <cite>to_batches</cite>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#lance.ExecutionPlan" title="lance.ExecutionPlan">ExecutionPlan</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="lance.MergeInsertBuilder">
 <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">lance.</span></span><span class="sig-name descname"><span class="pre">MergeInsertBuilder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lance.MergeInsertBuilder" title="Link to this definition"></a></dt>
 <dd><dl class="py method">
@@ -5594,6 +6011,19 @@ available and their types, which affects the generated execution plan.</p></li>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="lance.MergeInsertBuilder.mark_generations_as_merged">
+<span class="sig-name descname"><span class="pre">mark_generations_as_merged</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">generations</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#lance.MergedGeneration" title="lance.mem_wal.MergedGeneration"><span class="pre">mem_wal.MergedGeneration</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#lance.MergeInsertBuilder" title="lance.MergeInsertBuilder"><span class="pre">MergeInsertBuilder</span></a></span></span><a class="headerlink" href="#lance.MergeInsertBuilder.mark_generations_as_merged" title="Link to this definition"></a></dt>
+<dd><p>Mark MemWAL generations as merged into the base table.</p>
+<p>Call this before executing the merge_insert when the source data
+includes rows from MemWAL flushed generations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>generations</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em> of </em><a class="reference internal" href="#lance.MergedGeneration" title="lance.MergedGeneration"><em>MergedGeneration</em></a>) – Generations to mark as merged.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="lance.MergeInsertBuilder.retry_timeout">
 <span class="sig-name descname"><span class="pre">retry_timeout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.timedelta" title="(in Python v3.14)"><span class="pre">timedelta</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#lance.dataset.MergeInsertBuilder" title="lance.dataset.MergeInsertBuilder"><span class="pre">MergeInsertBuilder</span></a></span></span><a class="headerlink" href="#lance.MergeInsertBuilder.retry_timeout" title="Link to this definition"></a></dt>
 <dd><p>Set the timeout used to limit retries.</p>
@@ -5681,6 +6111,235 @@ the filter will be deleted.</p>
 <p>After this method is called, when the merge insert operation executes,
 any rows that exist only in the source table will be inserted into
 the target table.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="lance.MergedGeneration">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">lance.</span></span><span class="sig-name descname"><span class="pre">MergedGeneration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">region_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">generation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lance.MergedGeneration" title="Link to this definition"></a></dt>
+<dd><p>Identifies a flushed MemWAL generation that has been merged.</p>
+<p>Pass a list of these to mark_generations_as_merged
+so Lance knows which generations are now in the base table.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>region_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – UUID string for the write region.</p></li>
+<li><p><strong>generation</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – Generation number (from
+<code class="xref py py-attr docutils literal notranslate"><span class="pre">RegionSnapshot.flushed_generations</span></code>).</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="lance.MergedGeneration.generation">
+<span class="sig-name descname"><span class="pre">generation</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><a class="headerlink" href="#lance.MergedGeneration.generation" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="lance.MergedGeneration.region_id">
+<span class="sig-name descname"><span class="pre">region_id</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><a class="headerlink" href="#lance.MergedGeneration.region_id" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="lance.RegionField">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">lance.</span></span><span class="sig-name descname"><span class="pre">RegionField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">field_id:</span> <span class="pre">str,</span> <span class="pre">source_ids:</span> <span class="pre">~typing.List[int],</span> <span class="pre">transform:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">expression:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">result_type:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'',</span> <span class="pre">parameters:</span> <span class="pre">~typing.Dict[str,</span> <span class="pre">str]</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lance.RegionField" title="Link to this definition"></a></dt>
+<dd><p>Defines one derived field used in region partitioning.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>field_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Identifier for the derived field.</p></li>
+<li><p><strong>source_ids</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em> of </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – Source field IDs used as inputs.</p></li>
+<li><p><strong>transform</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><em>optional</em>) – Optional transform name applied to the source fields.</p></li>
+<li><p><strong>expression</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><em>optional</em>) – Optional expression used to derive the field value.</p></li>
+<li><p><strong>result_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Output type name for the derived field.</p></li>
+<li><p><strong>parameters</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a><em> of </em><em>str to str</em><em>, </em><em>optional</em>) – Extra transform parameters.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="lance.RegionField.expression">
+<span class="sig-name descname"><span class="pre">expression</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#lance.RegionField.expression" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="lance.RegionField.field_id">
+<span class="sig-name descname"><span class="pre">field_id</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><a class="headerlink" href="#lance.RegionField.field_id" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="lance.RegionField.parameters">
+<span class="sig-name descname"><span class="pre">parameters</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.14)"><span class="pre">Dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#lance.RegionField.parameters" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="lance.RegionField.result_type">
+<span class="sig-name descname"><span class="pre">result_type</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></span><a class="headerlink" href="#lance.RegionField.result_type" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="lance.RegionField.source_ids">
+<span class="sig-name descname"><span class="pre">source_ids</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#lance.RegionField.source_ids" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="lance.RegionField.transform">
+<span class="sig-name descname"><span class="pre">transform</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#lance.RegionField.transform" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="lance.RegionSnapshot">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">lance.</span></span><span class="sig-name descname"><span class="pre">RegionSnapshot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">region_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lance.RegionSnapshot" title="Link to this definition"></a></dt>
+<dd><p>Snapshot of a MemWAL region’s state, used when constructing scanners.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>region_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – UUID string for the write region.</p>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="lance.RegionSnapshot.region_id">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">region_id</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><a class="headerlink" href="#lance.RegionSnapshot.region_id" title="Link to this definition"></a></dt>
+<dd><p>UUID string for this region.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.RegionSnapshot.with_current_generation">
+<span class="sig-name descname"><span class="pre">with_current_generation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">generation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#lance.RegionSnapshot" title="lance.mem_wal.RegionSnapshot"><span class="pre">RegionSnapshot</span></a></span></span><a class="headerlink" href="#lance.RegionSnapshot.with_current_generation" title="Link to this definition"></a></dt>
+<dd><p>Set the current (active) generation number.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.RegionSnapshot.with_flushed_generation">
+<span class="sig-name descname"><span class="pre">with_flushed_generation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">generation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#lance.RegionSnapshot" title="lance.mem_wal.RegionSnapshot"><span class="pre">RegionSnapshot</span></a></span></span><a class="headerlink" href="#lance.RegionSnapshot.with_flushed_generation" title="Link to this definition"></a></dt>
+<dd><p>Add a flushed generation with its storage path.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.RegionSnapshot.with_spec_id">
+<span class="sig-name descname"><span class="pre">with_spec_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spec_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#lance.RegionSnapshot" title="lance.mem_wal.RegionSnapshot"><span class="pre">RegionSnapshot</span></a></span></span><a class="headerlink" href="#lance.RegionSnapshot.with_spec_id" title="Link to this definition"></a></dt>
+<dd><p>Set the RegionSpec ID.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="lance.RegionSpec">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">lance.</span></span><span class="sig-name descname"><span class="pre">RegionSpec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spec_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">fields</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#lance.RegionField" title="lance.mem_wal.RegionField"><span class="pre">RegionField</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lance.RegionSpec" title="Link to this definition"></a></dt>
+<dd><p>Partitioning specification for deriving MemWAL region IDs.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="lance.RegionSpec.fields">
+<span class="sig-name descname"><span class="pre">fields</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#lance.RegionField" title="lance.mem_wal.RegionField"><span class="pre">RegionField</span></a><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#lance.RegionSpec.fields" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="lance.RegionSpec.spec_id">
+<span class="sig-name descname"><span class="pre">spec_id</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><a class="headerlink" href="#lance.RegionSpec.spec_id" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="lance.RegionWriter">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">lance.</span></span><span class="sig-name descname"><span class="pre">RegionWriter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_raw</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_RegionWriter</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lance.RegionWriter" title="Link to this definition"></a></dt>
+<dd><p>Stateful writer for one MemWAL region.</p>
+<p>Obtain an instance via mem_wal_writer.
+Use as a context manager so the writer is closed automatically:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">dataset</span><span class="o">.</span><span class="n">mem_wal_writer</span><span class="p">(</span><span class="n">region_id</span><span class="p">)</span> <span class="k">as</span> <span class="n">writer</span><span class="p">:</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>_raw</strong> (<em>_RegionWriter</em>) – Internal PyO3 object — do not construct directly.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.RegionWriter.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#lance.RegionWriter.close" title="Link to this definition"></a></dt>
+<dd><p>Flush and close the writer.</p>
+<p>After <code class="docutils literal notranslate"><span class="pre">close()</span></code>, calling <a class="reference internal" href="#lance.RegionWriter.put" title="lance.RegionWriter.put"><code class="xref py py-meth docutils literal notranslate"><span class="pre">put()</span></code></a> raises an error.
+Automatically called when used as a context manager.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.RegionWriter.lsm_scanner">
+<span class="sig-name descname"><span class="pre">lsm_scanner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">region_snapshots</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#lance.RegionSnapshot" title="lance.mem_wal.RegionSnapshot"><span class="pre">RegionSnapshot</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#lance.LsmScanner" title="lance.mem_wal.LsmScanner"><span class="pre">LsmScanner</span></a></span></span><a class="headerlink" href="#lance.RegionWriter.lsm_scanner" title="Link to this definition"></a></dt>
+<dd><p>Create an LSM scanner that includes the active MemTable.</p>
+<p>This scanner covers the base table, the given flushed generations,
+and the current active MemTable — providing strong read-your-writes
+consistency.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>region_snapshots</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em> of </em><a class="reference internal" href="#lance.RegionSnapshot" title="lance.RegionSnapshot"><em>RegionSnapshot</em></a><em>, </em><em>optional</em>) – Snapshots of other regions to include.  This writer’s own region
+is automatically included.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#lance.LsmScanner" title="lance.LsmScanner">LsmScanner</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.RegionWriter.memtable_stats">
+<span class="sig-name descname"><span class="pre">memtable_stats</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><span class="pre">dict</span></a></span></span><a class="headerlink" href="#lance.RegionWriter.memtable_stats" title="Link to this definition"></a></dt>
+<dd><p>Return current MemTable statistics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Keys: <code class="docutils literal notranslate"><span class="pre">row_count</span></code>, <code class="docutils literal notranslate"><span class="pre">batch_count</span></code>, <code class="docutils literal notranslate"><span class="pre">estimated_size_bytes</span></code>,
+<code class="docutils literal notranslate"><span class="pre">generation</span></code>.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.RegionWriter.put">
+<span class="sig-name descname"><span class="pre">put</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">schema</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://arrow.apache.org/docs/python/generated/pyarrow.Schema.html#pyarrow.Schema" title="(in Apache Arrow v24.0.0)"><span class="pre">Schema</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#lance.RegionWriter.put" title="Link to this definition"></a></dt>
+<dd><p>Write data to the MemWAL.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>ReaderLike</em>) – Any Arrow-compatible data <cite>pyarrow.Table</cite>,
+<cite>pyarrow.RecordBatch</cite>, <code class="docutils literal notranslate"><span class="pre">RecordBatchReader</span></code>, pandas
+DataFrame, etc.</p></li>
+<li><p><strong>schema</strong> (<em>pa.Schema</em><em>, </em><em>optional</em>) – Schema hint, needed when <em>data</em> is a generator.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IOError" title="(in Python v3.14)"><strong>IOError</strong></a> – On WAL flush failure.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.14)"><strong>RuntimeError</strong></a> – If the writer has already been closed.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="lance.RegionWriter.region_id">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">region_id</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><a class="headerlink" href="#lance.RegionWriter.region_id" title="Link to this definition"></a></dt>
+<dd><p>UUID string for this writer’s region.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.RegionWriter.stats">
+<span class="sig-name descname"><span class="pre">stats</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><span class="pre">dict</span></a></span></span><a class="headerlink" href="#lance.RegionWriter.stats" title="Link to this definition"></a></dt>
+<dd><p>Return a snapshot of write statistics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Keys: <code class="docutils literal notranslate"><span class="pre">put_count</span></code>, <code class="docutils literal notranslate"><span class="pre">put_time_ms</span></code>, <code class="docutils literal notranslate"><span class="pre">wal_flush_count</span></code>,
+<code class="docutils literal notranslate"><span class="pre">wal_flush_bytes</span></code>, <code class="docutils literal notranslate"><span class="pre">wal_flush_time_ms</span></code>,
+<code class="docutils literal notranslate"><span class="pre">memtable_flush_count</span></code>, <code class="docutils literal notranslate"><span class="pre">memtable_flush_rows</span></code>,
+<code class="docutils literal notranslate"><span class="pre">memtable_flush_time_ms</span></code>.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -7601,6 +8260,62 @@ were provided.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="lance.dataset.LanceDataset.initialize_mem_wal">
+<span class="sig-name descname"><span class="pre">initialize_mem_wal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">maintained_indexes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">region_spec</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'mem_wal.RegionSpec'</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#lance.dataset.LanceDataset.initialize_mem_wal" title="Link to this definition"></a></dt>
+<dd><p>Initialize MemWAL on this dataset.</p>
+<p>Must be called once before any calls to <cite>mem_wal_writer</cite>.
+The dataset schema must have at least one field annotated with
+the <code class="docutils literal notranslate"><span class="pre">lance-schema:unenforced-primary-key</span></code> Arrow field metadata.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>maintained_indexes</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em> of </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><em>optional</em>) – Names of existing vector indexes to keep updated as data is
+written through the MemWAL.  Must reference indexes that
+already exist on the dataset.</p></li>
+<li><p><strong>region_spec</strong> (<a class="reference internal" href="#lance.RegionSpec" title="lance.RegionSpec"><em>RegionSpec</em></a><em>, </em><em>optional</em>) – Partitioning specification for automatic region routing.
+When provided, Lance will derive a region identifier from each
+written row according to the spec and route writes to the
+correct <cite>~lance.mem_wal.RegionWriter</cite> automatically.
+When <code class="docutils literal notranslate"><span class="pre">None</span></code> (default), the caller must manage region IDs
+manually by passing them to <cite>mem_wal_writer</cite>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IOError" title="(in Python v3.14)"><strong>IOError</strong></a> – <ul class="simple">
+<li><p>Dataset has no <code class="docutils literal notranslate"><span class="pre">lance-schema:unenforced-primary-key</span></code> field.
+    - An entry in <em>maintained_indexes</em> does not exist on the dataset.
+    - MemWAL has already been initialized on this dataset.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Without region spec (manual region management):</p>
+<p>import lance
+import pyarrow as pa
+import tempfile
+schema = pa.schema([
+…     pa.field(“id”, pa.int64(), nullable=False,
+…              metadata={“lance-schema:unenforced-primary-key”: “true”}),
+…     pa.field(“val”, pa.float32()),
+… ])
+table = pa.table({“id”: [1], “val”: [0.1]}, schema=schema)
+with tempfile.TemporaryDirectory() as tmpdir:</p>
+<blockquote>
+<div><p>ds = lance.write_dataset(table, tmpdir)
+ds.initialize_mem_wal()</p>
+</div></blockquote>
+<p>With a region spec for automatic routing by <code class="docutils literal notranslate"><span class="pre">tenant_id</span></code>:</p>
+<p>from lance.mem_wal import RegionField, RegionSpec
+spec = RegionSpec(
+…     spec_id=1,
+…     fields=[RegionField(field_id=”tenant_id”, source_ids=[0],
+…                        result_type=”int64”)],
+… )
+ds.initialize_mem_wal(region_spec=spec)</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="lance.dataset.LanceDataset.insert">
 <span class="sig-name descname"><span class="pre">insert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ReaderLike</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'append'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lance.dataset.LanceDataset.insert" title="Link to this definition"></a></dt>
 <dd><p>Insert data into the dataset.</p>
@@ -7770,6 +8485,67 @@ individual indexes of interest.</p>
 <dt class="sig sig-object py" id="lance.dataset.LanceDataset.max_field_id">
 <span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">max_field_id</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><a class="headerlink" href="#lance.dataset.LanceDataset.max_field_id" title="Link to this definition"></a></dt>
 <dd><p>The max_field_id in manifest</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.dataset.LanceDataset.mem_wal_writer">
+<span class="sig-name descname"><span class="pre">mem_wal_writer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">region_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">durable_write</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sync_indexed_write</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_wal_buffer_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_wal_flush_interval_ms</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_memtable_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_memtable_rows</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_memtable_batches</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_unflushed_memtable_bytes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ivf_index_partition_capacity_safety_factor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">manifest_scan_batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">async_index_buffer_rows</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">async_index_interval_ms</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backpressure_log_interval_ms</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stats_log_interval_ms</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#lance.RegionWriter" title="lance.mem_wal.RegionWriter"><span class="pre">mem_wal.RegionWriter</span></a></span></span><a class="headerlink" href="#lance.dataset.LanceDataset.mem_wal_writer" title="Link to this definition"></a></dt>
+<dd><p>Get a RegionWriter for the specified region.</p>
+<p><cite>initialize_mem_wal</cite> must be called before using this method.
+Each <em>region</em> is an independent write shard; use different region IDs
+to achieve parallel ingestion without writer contention.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>region_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – UUID string identifying the write region (e.g.
+<code class="docutils literal notranslate"><span class="pre">str(uuid.uuid4())</span></code>).</p></li>
+<li><p><strong>durable_write</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em>, </em><em>optional</em>) – Whether to fsync WAL writes (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>).</p></li>
+<li><p><strong>sync_indexed_write</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em>, </em><em>optional</em>) – Whether index updates are synchronous (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>).</p></li>
+<li><p><strong>max_wal_buffer_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – Maximum WAL buffer size in bytes (default: 10 MB).</p></li>
+<li><p><strong>max_wal_flush_interval_ms</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – Maximum WAL flush interval in milliseconds (default: 100).</p></li>
+<li><p><strong>max_memtable_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – Maximum MemTable size in bytes (default: 256 MB).</p></li>
+<li><p><strong>max_memtable_rows</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – Maximum rows per MemTable (default: 100 000).</p></li>
+<li><p><strong>max_memtable_batches</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – Maximum batches per MemTable (default: 8 000).</p></li>
+<li><p><strong>max_unflushed_memtable_bytes</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – Maximum unflushed bytes before backpressure (default: 1 GB).</p></li>
+<li><p><strong>ivf_index_partition_capacity_safety_factor</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – Safety factor for IVF partition capacity (default: 8).</p></li>
+<li><p><strong>manifest_scan_batch_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – Batch size for manifest scans (default: 2).</p></li>
+<li><p><strong>async_index_buffer_rows</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – Buffer rows for async index updates (default: 10 000).</p></li>
+<li><p><strong>async_index_interval_ms</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – Interval for async index updates in milliseconds (default: 1000).</p></li>
+<li><p><strong>backpressure_log_interval_ms</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – Interval for backpressure log messages in milliseconds
+(default: 30 000).</p></li>
+<li><p><strong>stats_log_interval_ms</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – Interval for statistics log messages in milliseconds
+(default: 60 000).  Pass <code class="docutils literal notranslate"><span class="pre">0</span></code> to disable.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A context-manager-compatible writer for the specified region.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#lance.RegionWriter" title="lance.RegionWriter">RegionWriter</a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">lance</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pa</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">tempfile</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">uuid</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">schema</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">schema</span><span class="p">([</span>
+<span class="gp">... </span>    <span class="n">pa</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">int64</span><span class="p">(),</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="gp">... </span>             <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;lance-schema:unenforced-primary-key&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">}),</span>
+<span class="gp">... </span>    <span class="n">pa</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s2">&quot;val&quot;</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">float32</span><span class="p">()),</span>
+<span class="gp">... </span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">TemporaryDirectory</span><span class="p">()</span> <span class="k">as</span> <span class="n">tmpdir</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">ds</span> <span class="o">=</span> <span class="n">lance</span><span class="o">.</span><span class="n">write_dataset</span><span class="p">(</span>
+<span class="gp">... </span>        <span class="n">pa</span><span class="o">.</span><span class="n">table</span><span class="p">({</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;val&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">]},</span> <span class="n">schema</span><span class="o">=</span><span class="n">schema</span><span class="p">),</span>
+<span class="gp">... </span>        <span class="n">tmpdir</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="p">)</span>
+<span class="gp">... </span>    <span class="n">ds</span><span class="o">.</span><span class="n">initialize_mem_wal</span><span class="p">()</span>
+<span class="gp">... </span>    <span class="n">region_id</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">())</span>
+<span class="gp">... </span>    <span class="n">new_data</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">table</span><span class="p">({</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="s2">&quot;val&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">]},</span> <span class="n">schema</span><span class="o">=</span><span class="n">schema</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">with</span> <span class="n">ds</span><span class="o">.</span><span class="n">mem_wal_writer</span><span class="p">(</span><span class="n">region_id</span><span class="p">)</span> <span class="k">as</span> <span class="n">writer</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="n">writer</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">new_data</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -9988,6 +10764,19 @@ available and their types, which affects the generated execution plan.</p></li>
 <span class="go">        ...</span>
 </pre></div>
 </div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lance.dataset.MergeInsertBuilder.mark_generations_as_merged">
+<span class="sig-name descname"><span class="pre">mark_generations_as_merged</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">generations</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#lance.MergedGeneration" title="lance.mem_wal.MergedGeneration"><span class="pre">mem_wal.MergedGeneration</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#lance.dataset.MergeInsertBuilder" title="lance.dataset.MergeInsertBuilder"><span class="pre">MergeInsertBuilder</span></a></span></span><a class="headerlink" href="#lance.dataset.MergeInsertBuilder.mark_generations_as_merged" title="Link to this definition"></a></dt>
+<dd><p>Mark MemWAL generations as merged into the base table.</p>
+<p>Call this before executing the merge_insert when the source data
+includes rows from MemWAL flushed generations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>generations</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em> of </em><a class="reference internal" href="#lance.MergedGeneration" title="lance.MergedGeneration"><em>MergedGeneration</em></a>) – Generations to mark as merged.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
